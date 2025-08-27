@@ -4,9 +4,9 @@ import Header from '../Common/Header'
 const UserLayot = () => {
   return (
     <div>
-      <Header/>
+      <Header />
     </div>
-  )
+  );
 }
 
 export default UserLayot
