@@ -5,17 +5,23 @@ import {
   HiOutlineShoppingBag,
   HiOutlineUser,
 } from "react-icons/hi";
+
+
 import Searchbar from "./Searchbar";
 import CartDrawer from "../Layout/CartDrawer";
-import MenuDrawer from "../Layout/MenuDrawer";
+import NavDrawer from "../Layout/navDrawer";
+
 
 const Navbar = () => {
-  const [cartDrawer, setCartDrawer] = useState(false);
-  const [menuOpen,setMenuOpen] = useState();
+  const [cartDrawerOpen, setCartDrawerOpen] = useState(false);
+  const [navDrawerOpen, setNavDrawerOpen] = useState(false);
+
   return (
     <>
-      <nav className="fixed top-0 left-0 right-0 p-2.5 z-50 backdrop-blur bg-white/70 shadow-sm">
-        <div className="flex justify-between items-center  mx-auto py-5">
+      <nav className="fixed top-0 left-0 right-0 p-2.5 z-50 bg-white shadow-sm">
+       
+        <div className="flex justify-between items-center mx-auto py-5">
+          
           {/* Logo */}
           <Link
             to="#"
@@ -27,7 +33,7 @@ const Navbar = () => {
           </Link>
 
           {/* Menu Links */}
-          <div className="hidden md:flex space-x-8 font-medium text-lg uppercase text-black">
+          <div className="hidden p-1 md:flex space-x-5 font-medium text-lg uppercase text-black">
             {["Smart Phone", "Laptop", "Speakers", "Head Phones"].map(
               (item) => (
                 <Link
@@ -49,8 +55,8 @@ const Navbar = () => {
               <HiOutlineUser className="h-6 w-6" />
             </a>
             <a
-              onClick={() => setCartDrawer(true)}
-              className="p-2 mr-3 rounded-full hover:bg-black hover:text-white transition duration-300 flex -top-1.5">
+              onClick={() => setCartDrawerOpen(true)}
+              className="p-2 mr-3 rounded-full hover:bg-black hover:text-white transition duration-300 flex -top-1.5 cursor-pointer">
               <HiOutlineShoppingBag className="h-6 w-6" />
               <span className="rounded-full px-2 bg-red-800 text-white absolute -bottom-0 mx-4 my-12">
                 1
@@ -58,16 +64,26 @@ const Navbar = () => {
             </a>
             {/* Searchbar */}
             <Searchbar />
-            <button className="md:hidden font-bold p-2 rounded-full hover:bg-black hover:text-white" onClick={()=>setMenuOpen(!menuOpen)}>
+            <button
+              className="md:hidden font-bold p-2 rounded-full hover:bg-black hover:text-white"
+              onClick={() => setNavDrawerOpen(true)}>
               <HiMenuAlt3 className="h-6 w-6" />
             </button>
           </div>
         </div>
       </nav>
-      {/* Card Drawer*/}
-      <CartDrawer drawerOpen={cartDrawer} setDrawerOpen={setCartDrawer} />
-      {/* Menu Drawer*/}
-      <MenuDrawer menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+
+      {/* Cart Drawer */}
+      <CartDrawer
+        cartDrawerOpen={cartDrawerOpen}
+        setCartDrawerOpen={setCartDrawerOpen}
+      />
+
+      {/* Menu Drawer */}
+      <NavDrawer
+        navDrawerOpen={navDrawerOpen}
+        setNavDrawerOpen={setNavDrawerOpen}
+      />
     </>
   );
 };
