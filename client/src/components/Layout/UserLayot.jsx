@@ -1,13 +1,14 @@
-import React from 'react'
 import Header from '../Common/Header'
 import Footer from '../Common/Footer';
-import ProductDetails from '../Products/ProductDetails';
+import { Outlet } from 'react-router-dom';
 
 const UserLayot = () => {
   return (
     <div>
       <Header />
-      <ProductDetails/>
+       <main>
+        <Outlet/>
+       </main>
       <Footer/>
     </div>
   );

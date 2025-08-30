@@ -28,7 +28,7 @@ const Searchbar = () => {
           onSubmit={handleSearch}>
           <div className="flex w-1/2 border-2 rounded-full overflow-hidden">
             <input
-              className="p-8 w-full h-12 outline-none"
+              className="p-5 w-full h-12 outline-none"
               type="text"
               onChange={(e) => setSearchTerm(e.target.value)}
               value={searchTerm}

@@ -1,4 +1,3 @@
-import React from "react";
 import { HiXCircle } from "react-icons/hi";
 import CartContents from "../Cart/cartContents";
 
@@ -7,7 +6,7 @@ const CartDrawer = ({ cartDrawerOpen, setCartDrawerOpen }) => {
     <>
       {/* Overlay */}
       <div
-        className={`fixed top-0 left-0 h-full w-full bg-opacity-40 transition-opacity ${
+        className={`fixed top-0 left-0 h-full w-full bg-opacity-40 transition-opacity z-40 ${
           cartDrawerOpen ? "opacity-100" : "opacity-0 pointer-events-none"
         }`}
         onClick={() => setCartDrawerOpen(false)}></div>
