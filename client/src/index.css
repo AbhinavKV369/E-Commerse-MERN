@@ -6,3 +6,6 @@
     color-scheme: white ;
     font-family: "Outfit", sans-serif;
 }
+.scrollbar-hide::-webkit-scrollbar{
+    display: none;
+}

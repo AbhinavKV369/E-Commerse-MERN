@@ -33,8 +33,8 @@ const Navbar = () => {
           </Link>
 
           {/* Menu Links */}
-          <div className="hidden p-1 md:flex space-x-5 font-medium text-lg uppercase text-black">
-            {["Smart Phone", "Laptop", "Gadgets"].map(
+          <div className="hidden p-1 md:flex space-x-5 font-medium text-md uppercase text-black">
+            {["Smart Phone", "Laptop", "Head Phones","Speakers"].map(
               (item) => (
                 <Link
                   key={item}

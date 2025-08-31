@@ -27,7 +27,7 @@ const CartDrawer = ({ cartDrawerOpen, setCartDrawerOpen }) => {
         </div>
 
         {/* Drawer content */}
-        <div className="p-6 flex-1 overflow-y-auto">
+        <div className="p-6 flex-1 overflow-y-auto scrollbar-hide">
           <h2 className="text-xl font-bold">Your Cart</h2>
           <CartContents />
         </div>

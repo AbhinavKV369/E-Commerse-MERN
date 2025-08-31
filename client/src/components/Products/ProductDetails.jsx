@@ -1,4 +1,5 @@
 import React from "react";
+import ProductImage from "../../assets/Smartphone.png";
 
 const ProductDetails = () => {
   const product = {
@@ -7,12 +8,13 @@ const ProductDetails = () => {
       "The Samsung Galaxy S23 offers a pro-grade camera, Snapdragon processor, and stunning AMOLED display.",
     price: "₹74,999",
     image:
-      "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcT1aIzocQ3U_Vo09WyJuazdnxTuiL8Io4uff6XkDpgn5P2kciIzySY1X7yWedOnh83dNIdvWvZAXl4TJdqoXvSayWdUPcxqdmiG0-LRwQFFT6JjUtUUKJ4-5g",
+     ProductImage,
     colors: ["#000000", "#1E40AF", "#DC2626"],
   };
 
   return (
-    <div className="max-w-6xl mx-auto px-6 py-10">
+    <div className="px-4">
+      <h1 className="text-4xl font-bold pb-10" >Best Seller</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
         {/* Product Image */}
         <div className="flex justify-center items-center">
