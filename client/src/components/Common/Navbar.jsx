@@ -6,11 +6,9 @@ import {
   HiOutlineUser,
 } from "react-icons/hi";
 
-
 import Searchbar from "./Searchbar";
 import CartDrawer from "../Layout/CartDrawer";
-import NavDrawer from "../Layout/navDrawer";
-
+import NavDrawer from "../Layout/NavDrawer";
 
 const Navbar = () => {
   const [cartDrawerOpen, setCartDrawerOpen] = useState(false);
@@ -19,12 +17,10 @@ const Navbar = () => {
   return (
     <>
       <nav className="fixed top-0 left-0 right-0 p-2.5 z-50 bg-white shadow-sm">
-       
         <div className="flex justify-between items-center mx-auto py-5">
-          
           {/* Logo */}
           <Link
-            to="#"
+            to="/"
             className="text-2xl font-extrabold tracking-wide text-black">
             Volt-Ex{" "}
             <span className="bg-black text-white px-2 py-0.5 rounded-lg">
@@ -33,13 +29,13 @@ const Navbar = () => {
           </Link>
 
           {/* Menu Links */}
-          <div className="hidden p-1 md:flex space-x-5 font-medium text-md uppercase text-black">
-            {["Smart Phone", "Laptop", "Head Phones","Speakers"].map(
+          <div className="hidden md:flex space-x-5 font-medium text-md uppercase text-black">
+            {["Smart Phone", "Laptop", "Head Phones", "Speakers"].map(
               (item) => (
                 <Link
                   key={item}
-                  to="#"
-                  className="relative group transition duration-300">
+                  to="/"
+                  className="relative group transition-all duration-300">
                   {item}
                   <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-black transition-all duration-300 group-hover:w-full"></span>
                 </Link>
@@ -48,24 +44,32 @@ const Navbar = () => {
           </div>
 
           {/* Icons */}
-          <div className="flex items-center space-x-1 text-black">
-            <a
-              href="#"
-              className="p-2 rounded-full hover:bg-black hover:text-white transition duration-300">
-              <HiOutlineUser className="h-6 w-6" />
-            </a>
-            <a
-              onClick={() => setCartDrawerOpen(true)}
-              className="p-2 mr-3 rounded-full hover:bg-black hover:text-white transition duration-300 flex -top-1.5 cursor-pointer">
-              <HiOutlineShoppingBag className="h-6 w-6" />
-              <span className="rounded-full px-2 bg-red-800 text-white absolute -bottom-0 mx-4 my-12">
-                1
-              </span>
-            </a>
-            {/* Searchbar */}
-            <Searchbar />
+          <div className="flex items-center space-x-2 text-black">
+            {/* User */}
             <button
-              className="md:hidden font-bold p-2 rounded-full hover:bg-black hover:text-white"
+              aria-label="User Account"
+              className="p-2 rounded-full hover:bg-black hover:text-white transition-all duration-300">
+              <HiOutlineUser className="h-6 w-6" />
+            </button>
+
+            {/* Cart */}
+            <button
+              aria-label="Cart"
+              onClick={() => setCartDrawerOpen(true)}
+              className="relative p-2 rounded-full hover:bg-black hover:text-white transition-all duration-300">
+              <HiOutlineShoppingBag className="h-6 w-6" />
+              <span className="absolute -top-1 -right-1 rounded-full px-2 text-xs font-bold bg-red-800 text-white">
+                10
+              </span>
+            </button>
+
+            {/* Search */}
+            <Searchbar />
+
+            {/* Mobile Menu */}
+            <button
+              aria-label="Open Menu"
+              className="md:hidden font-bold p-2 rounded-full hover:bg-black hover:text-white transition-all duration-300"
               onClick={() => setNavDrawerOpen(true)}>
               <HiMenuAlt3 className="h-6 w-6" />
             </button>

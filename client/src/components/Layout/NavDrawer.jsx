@@ -25,7 +25,7 @@ const NavDrawer = ({ navDrawerOpen, setNavDrawerOpen }) => {
 
         {/* Drawer content */}
         <div className="p-6 mt-20 flex flex-col space-y-4">
-          {["Smart Phone", "Laptop", "Gadgets"].map((item) => (
+          {["Smart Phone", "Laptop", "Head Phones", "Speaker"].map((item) => (
             <Link
               key={item}
               to="#"

@@ -1,3 +1,4 @@
+import Testimonials from "../components/Common/Testimonials"
 import Banner from "../components/Layout/Banner"
 import NewArrivals from "../components/Products/NewArrivals"
 import ProductCollections from "../components/Products/ProductCollections"
@@ -12,16 +13,18 @@ const Home = () => {
       <NewArrivals />
 
       {/* Best seller */}
-      <h1 className="text-4xl font-bold pb-10 text-center text-gray-800">
+      <h1 className="text-4xl font-bold pb-10 text-center text-gray-0">
         Best Seller
       </h1>
       <ProductDetails />
 
       {/* Trending products */}
-      <h1 className="text-3xl text-gray-900 text-center pt-6 font-bold">Trending Products</h1>
-      <ProductGrid/>
-
-
+      <h1 className="text-3xl mt-6 bg-gray-50 text-gray-900 text-center pt-5 font-bold shadow-2xl">
+        Trending Products
+      </h1>
+      <ProductGrid />
+      <Testimonials/>
+  
     </div>
   );
 }
