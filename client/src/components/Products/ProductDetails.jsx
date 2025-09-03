@@ -1,8 +1,7 @@
 import React, { useReducer } from "react";
-import { Link } from "react-router-dom";
 
-import ProductImage from "../../assets/Smartphone.png";
-import ProductImage1 from "../../assets/Gadgets.png";
+import ProductImage from "../../assets/Smartphone.webp";
+import ProductImage1 from "../../assets/Gadgets.webp";
 
 const product = {
   name: "Samsung Galaxy S23",
@@ -52,7 +51,7 @@ const ProductDetails = () => {
 
   return (
     <>
-      <div className="px-6 max-w-6xl mx-auto">
+      <div className="px-6 pt-10 max-w-6xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
           {/* Left: Product Images */}
           <div className="flex flex-col items-center">

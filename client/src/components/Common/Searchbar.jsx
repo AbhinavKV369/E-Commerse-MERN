@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { HiSearch, HiXCircle } from "react-icons/hi";
 
 const Searchbar = () => {

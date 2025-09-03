@@ -13,7 +13,7 @@ const Home = () => {
       <NewArrivals />
 
       {/* Best seller */}
-      <h1 className="text-4xl font-bold pb-10 text-center text-gray-0">
+      <h1 className="text-4xl font-bold pb-5 text-center text-gray-0">
         Best Seller
       </h1>
       <ProductDetails />

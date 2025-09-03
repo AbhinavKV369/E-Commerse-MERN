@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import LaptopCollection from "../../assets/Laptop.png";
-import SmartPhoneCollection from "../../assets/Smartphone.png";
-import GadgetCollection from "../../assets/Gadgets.png";
+import LaptopCollection from "../../assets/Laptop.webp";
+import SmartPhoneCollection from "../../assets/Smartphone.webp";
+import GadgetCollection from "../../assets/Gadgets.webp";
 
 const ProductCollections = () => {
   return (

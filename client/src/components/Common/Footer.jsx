@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import {
   HiOutlineMail,
@@ -7,10 +6,8 @@ import {
 } from "react-icons/hi";
 
 const Footer = () => {
-  return (
-  
-    
-      <footer className=" bottom-0  left-0 w-full shadow-2xl bg-gray-700 text-gray-300 mt-30 pt-10 pb-6 ">
+  return (    
+      <footer className=" bottom-0  left-0 w-full shadow-2xl bg-gray-700 text-gray-300 pt-10 ">
         <div className="bg-gray-700  max-w-7xl mx-3  px-6  grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Logo + About */}
           <div>

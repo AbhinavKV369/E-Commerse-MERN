@@ -1,4 +1,4 @@
-import BannerImg from "../../assets/Banner.png";
+import BannerImg from "../../assets/Banner.webp";
 
 const Testimonials = () => {
   return (

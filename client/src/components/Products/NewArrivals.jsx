@@ -2,9 +2,9 @@ import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
-import LaptopImg from "../../assets/Laptop.png";
-import GadgetImg from "../../assets/Gadgets.png";
-import BannerImg from "../../assets/Banner.png";
+import LaptopImg from "../../assets/Laptop.webp";
+import GadgetImg from "../../assets/Gadgets.webp";
+import BannerImg from "../../assets/Banner.webp";
 
 const NewArrivals = () => {
   const scrollRef = useRef(null);
