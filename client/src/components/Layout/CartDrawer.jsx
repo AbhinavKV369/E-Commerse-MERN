@@ -1,5 +1,5 @@
 import { HiXCircle } from "react-icons/hi";
-import CartContents from "../Cart/cartContents";
+import CartContents from "../Cart/CartContents";
 
 const CartDrawer = ({ cartDrawerOpen, setCartDrawerOpen }) => {
   return (
