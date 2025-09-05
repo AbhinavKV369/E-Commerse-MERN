@@ -46,11 +46,13 @@ const Navbar = () => {
           {/* Icons */}
           <div className="flex items-center space-x-2 text-black">
             {/* User */}
-            <button
-              aria-label="User Account"
-              className="p-2 rounded-full hover:bg-black hover:text-white transition-all duration-300">
-              <HiOutlineUser className="h-6 w-6" />
-            </button>
+            <Link to="/profile">
+              <button
+                aria-label="User Account"
+                className="p-2 rounded-full hover:bg-black hover:text-white transition-all duration-300">
+                <HiOutlineUser className="h-6 w-6" />
+              </button>
+            </Link>
 
             {/* Cart */}
             <button

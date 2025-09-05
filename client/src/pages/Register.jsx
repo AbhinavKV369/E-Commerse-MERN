@@ -1,7 +1,17 @@
-import React from "react";
-import LoginImage from "../assets/Login.webp"; // you can replace with a Register image if available
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+
+import LoginImage from "../assets/Login.webp"; 
 
 const Register = () => {
+    const [name,setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+
+    const handleSubmit = (e) =>{
+      e.preventDefault();
+      console.log(name,password);
+    }
   return (
     <div className="flex min-h-screen bg-gray-100 items-center justify-center">
       {/* Container */}
@@ -25,13 +35,15 @@ const Register = () => {
               Please fill in the details to register
             </p>
 
-            <form className="space-y-4">
+            <form className="space-y-4" onSubmit={handleSubmit}>
               {/* Name */}
               <div>
                 <label className="block text-gray-600 mb-1 text-sm">
                   Full Name
                 </label>
                 <input
+                value={name}
+                onChange={(e)=>setName(e.target.value)}
                   type="text"
                   placeholder="Enter your name"
                   className="w-full px-3 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-black focus:outline-none text-sm"
@@ -44,6 +56,8 @@ const Register = () => {
                   Email
                 </label>
                 <input
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                   type="email"
                   placeholder="Enter your email"
                   className="w-full px-3 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-black focus:outline-none text-sm"
@@ -56,6 +70,8 @@ const Register = () => {
                   Password
                 </label>
                 <input
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
                   type="password"
                   placeholder="Enter your password"
                   className="w-full px-3 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-black focus:outline-none text-sm"
@@ -97,9 +113,9 @@ const Register = () => {
 
             <p className="text-xs text-gray-500 text-center mt-6">
               Already have an account?{" "}
-              <a href="#" className="text-black font-medium hover:underline">
+              <Link to="/login" className="text-black font-medium hover:underline">
                 Login
-              </a>
+              </Link>
             </p>
           </div>
         </div>

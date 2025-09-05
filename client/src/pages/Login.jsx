@@ -1,7 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom"
 import LoginImage from "../assets/Login.webp";
 
+
 const Login = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const handleSubmit = (e) =>{
+    e.preventDefault();
+  }
   return (
     <div className="flex min-h-screen bg-gray-100 items-center justify-center">
       {/* Container */}
@@ -25,13 +32,15 @@ const Login = () => {
               Please login to your account
             </p>
 
-            <form className="space-y-4">
+            <form className="space-y-4" onSubmit={handleSubmit}>
               <div>
                 <label className="block text-gray-600 mb-1 text-sm">
                   Email
                 </label>
                 <input
                   type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter your email"
                   className="w-full px-3 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-black focus:outline-none text-sm"
                 />
@@ -42,6 +51,8 @@ const Login = () => {
                   Password
                 </label>
                 <input
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
                   type="password"
                   placeholder="Enter your password"
                   className="w-full px-3 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-black focus:outline-none text-sm"
@@ -67,9 +78,9 @@ const Login = () => {
 
             <p className="text-xs text-gray-500 text-center mt-6">
               Don’t have an account?{" "}
-              <a href="#" className="text-black font-medium hover:underline">
-                Sign up
-              </a>
+              <Link to="/register" className="text-black font-medium hover:underline">
+                Register
+              </Link>
             </p>
           </div>
         </div>

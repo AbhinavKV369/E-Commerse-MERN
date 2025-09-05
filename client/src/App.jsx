@@ -2,9 +2,11 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Toaster } from "sonner";
 import UserLayot from "./components/Layout/UserLayot";
 import Home from "./pages/Home";
+import Profile from "./pages/Profile";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import ProductDetails from "./components/Products/ProductDetails";
+
 
 const App = () => {
   return (
@@ -15,6 +17,7 @@ const App = () => {
           {/* Routes with Layout */}
           <Route path="/" element={<UserLayot />}>
             <Route index element={<Home />} />
+            <Route path="/profile" element={<Profile />} />
             <Route path="/product/:productId" element={<ProductDetails />} />
           </Route>
           <Route path="/login" element={<Login />} />
