@@ -49,7 +49,7 @@ const Profile = () => {
           </div>
 
           {/* Menu */}
-          <nav className="mt-8 flex flex-col space-y-2">
+          <nav className="mt-10 flex flex-col space-y-2">
             {tabs.map((tab) => (
               <NavLink
                 key={tab.id}
@@ -72,7 +72,7 @@ const Profile = () => {
         </aside>
 
         {/* Mobile Tabs */}
-        <div className="lg:hidden bg-white rounded-xl shadow-md p-3 flex gap-2 overflow-x-auto">
+        <div className="lg:hidden bg-white rounded-xl shadow-md p-3 flex gap-2 mt-8 overflow-x-auto">
           {tabs.map((tab) => (
             <NavLink
               key={tab.id}
