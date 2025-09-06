@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import {
+  HiBell,
   HiMenuAlt3,
   HiOutlineShoppingBag,
   HiOutlineUser,
@@ -9,6 +10,7 @@ import {
 import Searchbar from "./Searchbar";
 import CartDrawer from "../Layout/CartDrawer";
 import NavDrawer from "../Layout/NavDrawer";
+import { FiBell, FiBellOff } from "react-icons/fi";
 
 const Navbar = () => {
   const [cartDrawerOpen, setCartDrawerOpen] = useState(false);
@@ -45,11 +47,23 @@ const Navbar = () => {
 
           {/* Icons */}
           <div className="flex items-center space-x-2 text-black">
+            {/* Notifications */}
+            <Link to="/profile/notifications">
+              <button
+                aria-label="User Notifications"
+                className="relative p-2 rounded-full hover:bg-black hover:text-white transition-all duration-300">
+                <FiBell className="h-6 w-6" />
+                <span className="absolute -top-1 -right-1 rounded-full px-2 text-xs font-bold bg-red-800 text-white">
+                  1
+                </span>
+              </button>
+            </Link>
+
             {/* User */}
             <Link to="/profile">
               <button
                 aria-label="User Account"
-                className="p-2 rounded-full hover:bg-black hover:text-white transition-all duration-300">
+                className=" p-2 rounded-full hover:bg-black hover:text-white transition-all duration-300">
                 <HiOutlineUser className="h-6 w-6" />
               </button>
             </Link>
