@@ -28,8 +28,8 @@ const NavDrawer = ({ navDrawerOpen, setNavDrawerOpen ,navLinks}) => {
           {navLinks.map((item) => (
             <Link
               key={item}
-              to="#"
-              className="text-lg font-medium text-gray-700 hover:text-black relative group transition duration-300"
+              to={`/collections/${item}`}
+              className="text-lg font-medium text-gray-700 hover:text-black relative group transition duration-300 uppercase"
               onClick={() => setNavDrawerOpen(false)}>
               {item}
               <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-black transition-all duration-300 group-hover:w-50"></span>

@@ -11,11 +11,18 @@ import Searchbar from "./Searchbar";
 import CartDrawer from "../Layout/CartDrawer";
 import NavDrawer from "../Layout/NavDrawer";
 
-
 const Navbar = () => {
   const [cartDrawerOpen, setCartDrawerOpen] = useState(false);
   const [navDrawerOpen, setNavDrawerOpen] = useState(false);
-  const navLinks = ["smart phone", "laptop","tablets", "head phones", "speakers"];
+
+  const navLinks = [
+    "smart phone",
+    "laptop",
+    "tablets",
+    "head phones",
+    "speakers",
+  ];
+
   return (
     <>
       <nav className="fixed top-0 left-0 right-0 p-2.5 z-50 bg-white shadow-sm">
@@ -30,19 +37,17 @@ const Navbar = () => {
             </span>
           </Link>
 
-          {/* Menu Links */}
-          <div className="hidden md:flex space-x-5 font-medium text-md uppercase text-black">
-            {navLinks.map(
-              (item) => (
-                <Link
-                  key={item}
-                  to={`collections/${item}`}
-                  className="relative group transition-all duration-300 font-normal">
-                  {item}
-                  <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-black transition-all duration-300 group-hover:w-full"></span>
-                </Link>
-              )
-            )}
+          {/* Menu Links (Desktop only) */}
+          <div className="hidden lg:flex space-x-5 font-medium text-md uppercase text-black">
+            {navLinks.map((item) => (
+              <Link
+                key={item}
+                to={`collections/${item}`}
+                className="relative group transition-all duration-300 font-normal">
+                {item}
+                <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-black transition-all duration-300 group-hover:w-full"></span>
+              </Link>
+            ))}
           </div>
 
           {/* Icons */}
@@ -63,7 +68,7 @@ const Navbar = () => {
             <Link to="/profile">
               <button
                 aria-label="User Account"
-                className=" p-2 rounded-full hover:bg-black hover:text-white transition-all duration-300">
+                className="p-2 rounded-full hover:bg-black hover:text-white transition-all duration-300">
                 <HiOutlineUser className="h-6 w-6" />
               </button>
             </Link>
@@ -82,10 +87,10 @@ const Navbar = () => {
             {/* Search */}
             <Searchbar />
 
-            {/* Mobile Menu */}
+            {/* Mobile / Tablet Menu */}
             <button
               aria-label="Open Menu"
-              className="md:hidden font-bold p-2 rounded-full hover:bg-black hover:text-white transition-all duration-300"
+              className="lg:hidden font-bold p-2 rounded-full hover:bg-black hover:text-white transition-all duration-300"
               onClick={() => setNavDrawerOpen(true)}>
               <HiMenuAlt3 className="h-6 w-6" />
             </button>
