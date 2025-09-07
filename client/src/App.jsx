@@ -19,6 +19,7 @@ import Addresses from "./components/Profile/Addresses";
 import PaymentMethods from "./components/Profile/PaymentMethods";
 import Notification from "./components/Profile/Notification";
 import Security from "./components/Profile/Security";
+import Collections from "./pages/Collections";
 
 const App = () => {
   return (
@@ -29,7 +30,7 @@ const App = () => {
           {/* Routes with Layout */}
           <Route path="/" element={<UserLayot />}>
             <Route index element={<Home />} />
-            <Route path="/product/:productId" element={<ProductDetails />} />
+            <Route path="/collections/:collection" element={<Collections/>} />
             {/* Profile outlet  */}
             <Route path="/profile" element={<Profile />}>
               {/* Profile outlet components */}

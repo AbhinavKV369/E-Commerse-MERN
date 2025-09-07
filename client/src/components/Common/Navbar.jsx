@@ -1,21 +1,21 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import {
-  HiBell,
   HiMenuAlt3,
   HiOutlineShoppingBag,
   HiOutlineUser,
 } from "react-icons/hi";
+import { FiBell } from "react-icons/fi";
 
 import Searchbar from "./Searchbar";
 import CartDrawer from "../Layout/CartDrawer";
 import NavDrawer from "../Layout/NavDrawer";
-import { FiBell, FiBellOff } from "react-icons/fi";
+
 
 const Navbar = () => {
   const [cartDrawerOpen, setCartDrawerOpen] = useState(false);
   const [navDrawerOpen, setNavDrawerOpen] = useState(false);
-
+  const navLinks = ["smart phone", "laptop","tablets", "head phones", "speakers"];
   return (
     <>
       <nav className="fixed top-0 left-0 right-0 p-2.5 z-50 bg-white shadow-sm">
@@ -32,12 +32,12 @@ const Navbar = () => {
 
           {/* Menu Links */}
           <div className="hidden md:flex space-x-5 font-medium text-md uppercase text-black">
-            {["Smart Phone", "Laptop", "Head Phones", "Speakers"].map(
+            {navLinks.map(
               (item) => (
                 <Link
                   key={item}
-                  to="/"
-                  className="relative group transition-all duration-300">
+                  to={`collections/${item}`}
+                  className="relative group transition-all duration-300 font-normal">
                   {item}
                   <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-black transition-all duration-300 group-hover:w-full"></span>
                 </Link>
@@ -103,6 +103,7 @@ const Navbar = () => {
       <NavDrawer
         navDrawerOpen={navDrawerOpen}
         setNavDrawerOpen={setNavDrawerOpen}
+        navLinks={navLinks}
       />
     </>
   );

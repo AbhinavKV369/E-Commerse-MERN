@@ -98,7 +98,7 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t mt-10 pt-4 text-center text-sm">
+        <div className="border-t mt-10 p-4 text-center text-sm">
           © {new Date().getFullYear()} Volt-Ex. Made for study purpose
         </div>
       </footer>

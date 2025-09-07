@@ -1,7 +1,7 @@
 import { HiXCircle } from "react-icons/hi";
 import { Link } from "react-router-dom";
 
-const NavDrawer = ({ navDrawerOpen, setNavDrawerOpen }) => {
+const NavDrawer = ({ navDrawerOpen, setNavDrawerOpen ,navLinks}) => {
   return (
     <>
       {/* Overlay */}
@@ -25,7 +25,7 @@ const NavDrawer = ({ navDrawerOpen, setNavDrawerOpen }) => {
 
         {/* Drawer content */}
         <div className="p-6 mt-20 flex flex-col space-y-4">
-          {["Smart Phone", "Laptop", "Head Phones", "Speaker"].map((item) => (
+          {navLinks.map((item) => (
             <Link
               key={item}
               to="#"
