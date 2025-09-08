@@ -21,6 +21,7 @@ const Navbar = () => {
     "tablets",
     "head phones",
     "speakers",
+    "Smart TV"
   ];
 
   return (
