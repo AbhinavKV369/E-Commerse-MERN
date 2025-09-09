@@ -5,12 +5,13 @@ import UserLayot from "./components/Layout/UserLayout";
 // Home page
 import Home from "./pages/Home";
 // Profile Page
-import Profile from "./pages/Profile";
+import ProfilePage from "./pages/ProfilePage";
+// Collection Pages
+import CollectionsPage from "./pages/CollectionsPage";
+
 // Auth pages
 import Login from "./pages/Login";
 import Register from "./pages/Register";
-//Product Details
-import ProductDetails from "./components/Products/ProductDetails";
 
 // Profile Outlet components
 import Orders from "./components/Profile/Orders";
@@ -19,7 +20,6 @@ import Addresses from "./components/Profile/Addresses";
 import PaymentMethods from "./components/Profile/PaymentMethods";
 import Notification from "./components/Profile/Notification";
 import Security from "./components/Profile/Security";
-import Collections from "./pages/Collections";
 
 const App = () => {
   return (
@@ -30,9 +30,9 @@ const App = () => {
           {/* Routes with Layout */}
           <Route path="/" element={<UserLayot />}>
             <Route index element={<Home />} />
-            <Route path="/collections/:collection" element={<Collections/>} />
+            <Route path="/collections/:collection" element={<CollectionsPage />} />
             {/* Profile outlet  */}
-            <Route path="/profile" element={<Profile />}>
+            <Route path="/profile" element={<ProfilePage />}>
               {/* Profile outlet components */}
               <Route index element={ <Navigate to="orders" replace/>}  />
               <Route path="orders"  element={< Orders />} />

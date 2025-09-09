@@ -41,6 +41,7 @@ const ProductCollections = () => {
                 src={SmartPhoneCollection}
                 alt="Smartphones"
                 className="w-full h-full object-cover rounded-xl"
+                loading="lazy"
               />
               <div className="absolute inset-0 bg-black/40 flex items-center justify-center rounded-xl opacity-0 group-hover:opacity-100 transition duration-300">
                 <p className="text-white text-lg font-semibold">

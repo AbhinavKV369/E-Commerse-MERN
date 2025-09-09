@@ -4,7 +4,7 @@ import Footer from './Footer'
 
 const Header = () => {
   return (
-   <header className='mt-20'>
+   <header className='mt-25'>
     <Navbar/>
    </header>
   )

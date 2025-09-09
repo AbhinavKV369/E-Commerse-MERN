@@ -73,9 +73,7 @@ const CollectionPage = () => {
         </div>
 
         {/* Product List */}
-        <main className="flex-1">
-          <h1 className="text-2xl font-bold mt-7 mb-6">All Products</h1>
-
+        <main className="flex-1 lg:mt-10">
           {/* Filter button for mobile */}
           <div className="lg:hidden flex justify-start my-6">
             <button

@@ -13,7 +13,7 @@ const Profile = () => {
   const user = {
     name: "Abhinav",
     email: "abhinav@example.com",
-    phone: "+91 98765 43210",
+    phone: "+91 751234567844",
     avatar:
       "https://ui-avatars.com/api/?name=Abhinav&background=000000&color=fff",
   };
@@ -30,8 +30,23 @@ const Profile = () => {
   return (
     <div className="bg-gray-100 min-h-screen py-6 px-4">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-6">
+        {/* profile for mobile and medium devices */}
+        <div className="lg:hidden flex flex-col items-center bg-gray-800/70 shadow-lg text-white p-5 rounded-2xl">
+          <img
+            src={user.avatar}
+            alt="profile"
+            className="w-24 h-24 rounded-full border-4 border-gray-200  shadow-md"
+          />
+          <h1 className="text-lg font-bold  mt-3">{user.name}</h1>
+          <p className=" text-sm">{user.email}</p>
+          <p className=" text-sm">{user.phone}</p>
+          <button className="mt-4 px-5 py-2 text-sm bg-black text-white rounded-lg shadow hover:bg-gray-800">
+            Edit Profile
+          </button>
+        </div>
         {/* Sidebar (desktop) */}
         <aside className="hidden lg:block w-80 bg-white shadow-md rounded-xl p-6">
+          {/* profile for  large devices */}
           <div className="flex flex-col items-center">
             <img
               src={user.avatar}
@@ -72,7 +87,7 @@ const Profile = () => {
         </aside>
 
         {/* Mobile Tabs */}
-        <div className="lg:hidden bg-white rounded-xl shadow-md p-3 flex gap-2 mt-8 overflow-x-auto">
+        <div className="lg:hidden bg-white rounded-xl shadow-md p-3 flex gap-2 mt-2 overflow-x-auto">
           {tabs.map((tab) => (
             <NavLink
               key={tab.id}

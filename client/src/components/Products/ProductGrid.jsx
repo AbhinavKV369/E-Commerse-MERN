@@ -17,6 +17,7 @@ const ProductGrid = ({products}) => {
                     src={product.image}
                     alt={product.name}
                     className="w-full h-48 object-cover transform hover:scale-105 transition duration-300"
+                    loading="lazy"
                   />
                 </Link>
               </div>

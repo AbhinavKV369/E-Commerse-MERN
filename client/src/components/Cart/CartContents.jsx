@@ -65,6 +65,7 @@ const CartContents = () => {
             src={item.image}
             alt={item.name}
             className="h-40 w-full rounded-lg object-contain bg-gray-50"
+            loading="lazy"
           />
 
           {/* Product name */}
@@ -85,10 +86,13 @@ const CartContents = () => {
             ))}
           </div>
           <div className="flex items-center pt-3 justify-center space-x-4 ">
-            <button className="bg-blue-900 hover:bg-gray-800 px-2 rounded-full text-white">-</button>
+            <button className="bg-blue-900 hover:bg-gray-800 px-2 rounded-full text-white">
+              -
+            </button>
             <h2 className="font-bold text-xl">{item.qty}</h2>
-            <button className="bg-blue-900 hover:bg-gray-800 px-2 rounded-full text-white">+</button>
-
+            <button className="bg-blue-900 hover:bg-gray-800 px-2 rounded-full text-white">
+              +
+            </button>
           </div>
 
           {/* Buy button */}

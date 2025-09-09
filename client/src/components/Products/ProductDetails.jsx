@@ -74,6 +74,7 @@ const ProductDetails = () => {
                       ? "ring-2 ring-black border-black"
                       : "shadow-md"
                   }`}
+                  loading="lazy"
                 />
               ))}
             </div>
@@ -160,8 +161,6 @@ const ProductDetails = () => {
           </div>
         </div>
       </div>
-
-    
     </>
   );
 };
