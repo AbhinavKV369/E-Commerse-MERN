@@ -38,7 +38,7 @@ const ProductCollections = () => {
           <div className="relative w-full h-64 md:h-72 lg:h-80 rounded-xl shadow-lg transition-transform duration-500 transform group-hover:rotate-y-6 group-hover:-rotate-x-3">
             <Link to={``}>
               <img
-                src={SmartPhoneCollection} 
+                src={SmartPhoneCollection}
                 alt="Smartphones"
                 className="w-full h-full object-cover rounded-xl"
               />

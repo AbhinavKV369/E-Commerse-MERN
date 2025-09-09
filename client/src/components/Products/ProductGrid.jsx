@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 
 const ProductGrid = ({products}) => {
   return (
-    <section className="bg-gray-50 py-12">
-      <div className="container mx-auto px-3">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3">
+    <section className="bg-gray-50 py-6 px-6">
+      <div className="container mx-auto ">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {products.map((product) => (
             <div
               key={product.id}
