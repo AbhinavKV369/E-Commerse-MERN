@@ -31,9 +31,9 @@ const Navbar = () => {
           {/* Logo */}
           <Link
             to="/"
-            className="text-2xl font-extrabold tracking-wide text-black">
-            Volt-Ex{" "}
-            <span className="bg-black text-white px-2 py-0.5 rounded-lg">
+            className="flex text-2xl font-extrabold tracking-wide text-black">
+            <span className="hidden md:flex lg:flex ">Volt-Ex {" "}</span> 
+            <span className="bg-black text-white px-2 py-0.5 rounded-lg mx-2">
               ⚡
             </span>
           </Link>
