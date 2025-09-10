@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import FormModal from "../Common/formModal";
+import FormModal from "../Common/FormModal";
 
 const formFields = [
   { name: "type", placeholder: "Type (e.g. Home, Work)" },
