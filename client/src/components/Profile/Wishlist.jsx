@@ -25,24 +25,25 @@ const Wishlist = () => {
   ];
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
       {wishlist.map((item) => (
         <div
           key={item.id}
-          className="bg-white p-4 rounded-xl shadow flex gap-4 items-center border border-gray-200">
+          className="bg-white rounded-2xl shadow-lg p-4 flex flex-col justify-between hover:shadow-xl transition cursor-pointer border border-gray-100">
           {/* Product Image */}
-          <img
-            src={item.image}
-            alt={item.name}
-            className="w-20 h-20 object-contain rounded-lg"
-          />
+          <div className="flex justify-center mb-3">
+            <img
+              src={item.image}
+              alt={item.name}
+              className="w-32 h-32 object-contain rounded-lg"
+            />
+          </div>
 
           {/* Product Info */}
           <div className="flex-1">
-            <p className="font-semibold text-gray-900">{item.name}</p>
+            <h3 className="text-md font-semibold text-gray-900">{item.name}</h3>
             <p className="text-xs text-gray-500">{item.brand}</p>
-
-            <div className="mt-1">
+            <div className="mt-2">
               <span className="text-gray-900 font-bold">{item.price}</span>
               {item.oldPrice && (
                 <span className="ml-2 text-gray-400 line-through text-sm">
@@ -50,9 +51,8 @@ const Wishlist = () => {
                 </span>
               )}
             </div>
-
             <p
-              className={`text-xs mt-1 ${
+              className={`mt-1 text-xs font-medium ${
                 item.inStock ? "text-green-600" : "text-red-500"
               }`}>
               {item.inStock ? "In Stock" : "Out of Stock"}
@@ -60,17 +60,17 @@ const Wishlist = () => {
           </div>
 
           {/* Actions */}
-          <div className="flex flex-col gap-2">
+          <div className="flex gap-2 mt-4">
             <button
               disabled={!item.inStock}
-              className={`px-3 py-2 rounded-lg text-xs shadow ${
+              className={`flex-1 px-3 py-2 rounded-xl text-sm font-medium shadow text-white transition ${
                 item.inStock
-                  ? "bg-black hover:bg-gray-800 text-white"
+                  ? "bg-black hover:bg-gray-800"
                   : "bg-gray-200 text-gray-400 cursor-not-allowed"
               }`}>
               Add to Cart
             </button>
-            <button className="px-3 py-2 bg-red-100 hover:bg-red-200 text-red-600 rounded-lg text-xs shadow">
+            <button className="flex-1 px-3 py-2 rounded-xl text-sm font-medium shadow bg-red-100 text-red-600 hover:bg-red-200 transition">
               Remove
             </button>
           </div>

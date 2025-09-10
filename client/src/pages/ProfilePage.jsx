@@ -45,7 +45,7 @@ const Profile = () => {
           </button>
         </div>
         {/* Sidebar (desktop) */}
-        <aside className="hidden lg:block w-80 bg-white shadow-md rounded-xl p-6">
+        <aside className="hidden lg:block w-80 h-200 bg-white shadow-md rounded-xl p-6">
           {/* profile for  large devices */}
           <div className="flex flex-col items-center">
             <img
@@ -64,19 +64,19 @@ const Profile = () => {
           </div>
 
           {/* Menu */}
-          <nav className="mt-10 flex flex-col space-y-2">
+          <nav className="mt-10 flex flex-col space-y-3">
             {tabs.map((tab) => (
               <NavLink
                 key={tab.id}
                 to={tab.id}
                 className={({ isActive }) =>
-                  `flex items-center gap-3 w-full px-4 py-2 rounded-lg text-sm font-medium transition ${
+                  `flex items-center w-full px-4 py-2 rounded-lg text-sm font-medium transition ${
                     isActive
                       ? "bg-black text-white shadow"
                       : "bg-gray-100 text-gray-700 hover:bg-gray-200"
                   }`
                 }>
-                {tab.icon} {tab.label}
+                {tab.icon} {` `} {tab.label}
               </NavLink>
             ))}
           </nav>
