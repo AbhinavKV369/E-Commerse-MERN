@@ -1,35 +1,43 @@
-import React from 'react'
+import React from "react";
 
 const PaymentMethods = () => {
-    const payments = [
-      { id: 1, card: "**** **** **** 1234", type: "Visa", expiry: "06/26" },
-      { id: 2, card: "**** **** **** 5678", type: "Mastercard", expiry: "09/27" },
-    ];
+  const payments = [
+    { id: 1, card: "**** **** **** 1234", type: "Visa", expiry: "06/26" },
+    { id: 2, card: "**** **** **** 5678", type: "Mastercard", expiry: "09/27" },
+  ];
+
   return (
-    <div>
-      {" "}
-        <div className="space-y-4">
-          {payments.map((card) => (
-            <div
-              key={card.id}
-              className="bg-white p-4 rounded-xl shadow flex flex-col sm:flex-row justify-between sm:items-center gap-3">
-              <div>
-                <p className="font-semibold text-gray-900">{card.type}</p>
-                <p className="text-gray-600 text-sm">
-                  {card.card} (Exp: {card.expiry})
-                </p>
-              </div>
-              <button className="px-3 py-1 text-xs bg-red-200 text-red-700 rounded-lg hover:bg-red-300">
-                Remove
-              </button>
-            </div>
-          ))}
-          <button className="px-5 py-2 bg-black hover:bg-gray-800 text-white rounded-xl shadow text-sm">
-            + Add Card
-          </button>
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {payments.map((card) => (
+        <div
+          key={card.id}
+          className="relative h-48 w-full rounded-2xl shadow-xl p-6 text-white bg-gray-800 flex flex-col justify-between overflow-hidden">
+          {/* Decorative circles (like real cards) */}
+
+          {/* Card Type */}
+          <div className="text-sm uppercase tracking-widest font-semibold opacity-80">
+            {card.type}
+          </div>
+
+          {/* Card Number */}
+          <div className="tracking-widest text-2xl font-mono">{card.card}</div>
+
+          {/* Expiry + Remove */}
+          <div className="flex justify-between items-center text-sm">
+            <p className="opacity-80">Exp: {card.expiry}</p>
+            <button className="px-3 py-1 text-xs bg-red-500/80 hover:bg-red-600 rounded-lg transition">
+              Remove
+            </button>
+          </div>
         </div>
+      ))}
+
+      {/* Add Card */}
+      <button className="h-48 w-full rounded-2xl border-2 border-dashed border-gray-400 flex items-center justify-center text-gray-600 hover:border-black hover:text-black transition text-sm font-medium">
+        + Add New Card
+      </button>
     </div>
   );
-}
+};
 
-export default PaymentMethods
+export default PaymentMethods;

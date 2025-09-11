@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import FormModal from "../Common/formModal";
+import FormModal from "../Common/FormModals";
+
 
 const formFields = [
   { name: "type", placeholder: "Type (e.g. Home, Work)" },
@@ -35,7 +36,15 @@ const Addresses = () => {
   ]);
 
   const [isFormOpen,setIsFormOpen] = useState(false);
-  
+  const [formValues, setFormValues] = useState({
+    type: "",
+    house: "",
+    street: "",
+    city: "",
+    district: "",
+    state: "",
+  });
+
   const handleFormSubmit = (e) =>{
   }
 
@@ -52,7 +61,7 @@ const Addresses = () => {
               {addr.state}
             </p>
             {addr.default && (
-              <span className="text-green-600 text-xs">Default</span>
+              <span className="text-white bg-gray-900 p-1 rounded-md text-sm">Default</span>
             )}
           </div>
           <div className="flex gap-2">
@@ -79,6 +88,8 @@ const Addresses = () => {
           isFormOpen={isFormOpen}
           setIsFormOpen={setIsFormOpen}
           formFields={formFields}
+          formvalues={formValues}
+          setFormValues={setFormValues}
           onSubmit={handleFormSubmit}
         />
       </div>

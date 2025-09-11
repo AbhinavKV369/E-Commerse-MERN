@@ -1,13 +1,12 @@
-import React, { useState } from "react";
+const FormModal = ({ isFormOpen, setIsFormOpen, formFields, formvalues, setFormValues ,onSubmit }) => {
 
-const FormModal = ({ isFormOpen, setIsFormOpen, formFields, onSubmit }) => {
 
-    const [values,setValues] = useState({})
  
     if(!isFormOpen) return null;
   
     const handleChange = (e) =>{
-    
+      const {name,value} = e.target;
+      setFormValues((prev)=>({...prev,[name]:value}))    
     }
 
   return (
@@ -23,7 +22,7 @@ const FormModal = ({ isFormOpen, setIsFormOpen, formFields, onSubmit }) => {
               key={field.name}
               name={field.name}
               placeholder={field.placeholder}
-              value={values[field.name] || ""}
+              value={formvalues[field.name] || ""}
               onChange={handleChange}
               className="w-full p-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-black/70 focus:border-black/70 outline-none transition"
             />
