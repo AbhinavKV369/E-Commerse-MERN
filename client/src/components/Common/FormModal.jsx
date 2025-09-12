@@ -2,6 +2,7 @@ import React from "react";
 
 const FormModal = ({
   isFormOpen,
+  title,
   setIsFormOpen,
   formFields,
   formValues,
@@ -19,16 +20,18 @@ const FormModal = ({
     <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50">
       <div className="bg-white p-6 rounded-2xl w-[90%] max-w-md shadow-xl relative">
         <h2 className="text-xl font-semibold text-gray-900 mb-5">
-          Add / Edit Address
+          Add / Edit {title}
         </h2>
         <form className="space-y-4" onSubmit={onSubmit}>
           {formFields.map((field) => (
             <input
               key={field.name}
               name={field.name}
+              type={field.type || "text"}
               value={formValues[field.name]}
               onChange={handleChange}
               placeholder={field.placeholder}
+              autoComplete={field.autoComplete || "off"}
               className="w-full p-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-black/70 focus:border-black/70 outline-none transition"
             />
           ))}

@@ -49,7 +49,6 @@ const Addresses = () => {
 
 const handleFormSubmit = (e) => {
   e.preventDefault();
-
   if (editingId) {
     // Edit existing address
     setAddresses((prev) =>
@@ -148,6 +147,7 @@ const handleFormSubmit = (e) => {
       {/* Modal Form */}
       <FormModal
         isFormOpen={isFormOpen}
+        title="Address"
         setIsFormOpen={setIsFormOpen}
         formFields={formFields}
         formValues={formValues}
