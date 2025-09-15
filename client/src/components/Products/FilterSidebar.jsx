@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { useSearchParams } from "react-router-dom"
+import { useSearchParams } from "react-router-dom";
 
 const FilterSidebar = () => {
-    const [searchParams,SetSearchParams] = useSearchParams();
-    const [filters, setFilters] = useState({
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [filters, setFilters] = useState({
     category: "",
     brands: [],
-    minPrice:0,
-    maxPrice:200000,
+    minPrice: 0,
+    maxPrice: 200000,
     ratings: [],
     ramStorage: [],
     connectivity: [],
@@ -17,191 +17,191 @@ const FilterSidebar = () => {
     os: [],
     storageType: [],
   });
-  
-  const [PriceRange,setpriceRange] = useState([0,200000]);
+  const [priceRange, setPriceRange] = useState([0, 200000]);
 
-  const categories = ["Smartphones", "Laptops", "Tablets", "Headphones", "Speakers","Smart Tv"];
-  const brands = ["Samsung", "Apple", "Dell", "HP", "Realme", "Redmi", "Lenovo", "Asus"];
-  const ratings = ["✰✰✰✰✰", "✰✰✰✰", "✰✰✰"];
-  const ramStorage = ["4GB/64GB", "6GB/128GB", "8GB/256GB"];
-  const connectivity = ["WiFi", "Bluetooth", "5G"];
-  const cameras = ["12MP", "48MP", "50MP", "108MP"];
-  const screenSizes = ["5.5\"", "6.1\"", "6.5\"", "6.8\""];
-  const batteries = ["3000mAh", "4000mAh", "5000mAh", "6000mAh"];
-  const os = ["Android", "iOS", "Windows", "Linux"];
+  // Categories
+  const categories = [
+    "Smartphones",
+    "Laptops",
+    "Tablets",
+    "Headphones",
+    "Speakers",
+    "Smart TV",
+    "Smart Watch",
+  ];
+  // Options
+  const brands = [
+    "Samsung",
+    "Apple",
+    "Dell",
+    "HP",
+    "Realme",
+    "Redmi",
+    "Lenovo",
+    "Asus",
+  ];
+  const ratings = ["✰", "✰✰", "✰✰✰", "✰✰✰✰", "✰✰✰✰✰"];
+  const ramStorage = [
+    "2GB/32GB",
+    "3GB/32GB",
+    "4GB/64GB",
+    "6GB/128GB",
+    "8GB/128GB",
+    "8GB/256GB",
+    "12GB/256GB",
+    "16GB/512GB",
+    "32GB/1TB",
+  ];
+  const connectivity = [
+    "WiFi",
+    "Bluetooth",
+    "4G LTE",
+    "5G",
+    "NFC",
+    "Infrared",
+    "Ethernet",
+    "USB-C",
+  ];
+  const cameras = [
+    "8MP",
+    "12MP",
+    "16MP",
+    "32MP",
+    "48MP",
+    "50MP",
+    "64MP",
+    "108MP",
+    "200MP",
+  ];
+  const screenSizes = [
+    '5.0"',
+    '5.5"',
+    '6.0"',
+    '6.1"',
+    '6.5"',
+    '6.7"',
+    '6.8"',
+    '7.0"',
+    '1.2"',
+    '1.4"',
+    '1.6"',
+  ];
+  const batteries = [
+    "2000mAh",
+    "3000mAh",
+    "3500mAh",
+    "4000mAh",
+    "4500mAh",
+    "5000mAh",
+    "5500mAh",
+    "6000mAh",
+    "7000mAh",
+    "250mAh",
+    "350mAh",
+    "450mAh",
+    "600mAh",
+  ];
+  const os = ["Android", "iOS", "Windows", "Linux", "WearOS"];
   const storageType = ["eMMC", "UFS 2.1", "UFS 3.1", "SSD", "HDD"];
 
-  useEffect(()=>{
-    const params = Object.fromEntries([...searchParams])
+  const categoryFeatures = {
+    Smartphones: [
+      "brands",
+      "ratings",
+      "ramStorage",
+      "connectivity",
+      "cameras",
+      "screenSizes",
+      "batteries",
+      "os",
+    ],
+    Laptops: [
+      "brands",
+      "ratings",
+      "ramStorage",
+      "storageType",
+      "os",
+      "screenSizes",
+      "batteries",
+    ],
+    Tablets: ["brands", "ratings", "ramStorage", "os", "screenSizes"],
+    Headphones: ["brands", "ratings", "connectivity", "batteries"],
+    Speakers: ["brands", "ratings", "connectivity", "batteries"],
+    "Smart TV": ["brands", "ratings", "screenSizes", "os"],
+    "Smart Watch": [
+      "brands",
+      "ratings",
+      "connectivity",
+      "batteries",
+      "os",
+      "screenSizes",
+    ],
+  };
 
-  }) 
+  const handlePriceRange = (e) =>{
+    const value = e.target.value;
+    setPriceRange([priceRange[0],value])
+  }
+
+  useEffect(() => {
+    const params = Object.fromEntries([...searchParams]);
+
+    setFilters({
+      category: params.category || "",
+      brands: params.brand ? params.brand.split(",") : [],
+      ratings: params.rating ? params.rating.split(",") : [],
+      ramStorage: params.ramStorage ? params.ramStorage.split(",") : [],
+      connectivity: params.connectivity ? params.connectivity.split(",") : [],
+      cameras: params.cameras ? params.cameras.split(",") : [],
+      screenSizes: params.screenSizes ? params.screenSizes.split(",") : [],
+      batteries: params.batteries ? params.batteries.split(",") : [],
+      os: params.os ? params.os.split(",") : [],
+      storageType: params.storageType ? params.storageType.split(",") : [],
+      minPrice: params.minPrice ? Number(params.minPrice) : 0,
+      maxPrice: params.maxPrice ? Number(params.maxPrice) : 200000,
+    });
+    console.log(filters)
+
+    setPriceRange([
+      params.minPrice ? Number(params.minPrice) : 0,
+      params.maxPrice ? Number(params.maxPrice) : 200000,
+    ]);
+  }, [searchParams]);
+
+
 
   return (
     <div>
-      <aside className="w-80 bg-white shadow-lg p-6 rounded-xl space-y-6">
-        {/* Categories */}
-        <div>
-          <h3 className="text-lg font-semibold text-gray-800 mb-2">Categories</h3>
-          <div className="flex flex-col gap-2">
-            {categories.map((cat) => (
-              <button key={cat} className="text-left px-3 py-1 rounded hover:bg-gray-100 transition">
-                {cat}
-              </button>
-            ))}
-          </div>
-        </div>
+      <aside className="w-80 bg-white shadow-lg px-6 py-1 rounded-xl space-y-6">
+        <div className="flex flex-col space-y-2 mt-5 lg:mt-2">
+          <h1 className="text-lg font-bold mb-3">Category</h1>
+          {/* Category filter */}
+          {categories.map((category) => (
+            <button
+              onClick={()=>setFilters((prev)=>({...prev,category}))}
+              key={category}
+              className={`shadow-sm p-1 border-gray-600/60 border-2 rounded-xl ${filters.category === category ?"bg-black text-white":""}`}>
+              {category}
+            </button>
+          ))}
 
-        {/* Brands */}
-        <div>
-          <h3 className="text-lg font-semibold text-gray-800 mb-2">Popular Brands</h3>
-          <div className="flex flex-wrap gap-2">
-            {brands.map((brand) => (
-              <button
-                key={brand}
-                className="px-3 py-1 rounded-full border border-gray-300 hover:bg-black hover:text-white transition"
-              >
-                {brand}
-              </button>
-            ))}
-          </div>
-        </div>
-
-        {/* Price Range */}
-        <div>
-          <h3 className="text-lg font-semibold text-gray-800 mb-2">Price</h3>
-          <div className="flex items-center gap-3">
-            <span className="text-gray-600 text-sm">₹0</span>
-            <input
-              type="range"
-              min="0"
-              max="200000"
-              className="w-full h-2 bg-gray-200 rounded-lg appearance-none accent-gray-900"
-            />
-            <span className="text-gray-600 text-sm">₹2,00,000+</span>
-          </div>
-          <div className="flex justify-between text-xs text-gray-500 mt-1">
-            <span>Min</span>
-            <span>Max</span>
-          </div>
-        </div>
-
-        {/* Ratings */}
-        <div>
-          <h3 className="text-lg font-semibold text-gray-800 mb-2">Customer Ratings</h3>
-          <div className="flex flex-col gap-2">
-            {ratings.map((rating, idx) => (
-              <button
-                key={idx}
-                className="flex items-center gap-2 hover:bg-gray-100 px-3 py-1 rounded transition font-bold first-letter text-xl"
-              >
-                {rating} <span className="font-normal">& above</span>
-              </button>
-            ))}
-          </div>
-        </div>
-
-        {/* RAM / Storage */}
-        <div>
-          <h3 className="text-lg font-semibold text-gray-800 mb-2">RAM / Storage</h3>
-          <div className="flex flex-wrap gap-2">
-            {ramStorage.map((spec) => (
-              <button
-                key={spec}
-                className="px-3 py-1 rounded-full border border-gray-300 hover:bg-black hover:text-white transition"
-              >
-                {spec}
-              </button>
-            ))}
-          </div>
-        </div>
-
-        {/* Connectivity */}
-        <div>
-          <h3 className="text-lg font-semibold text-gray-800 mb-2">Connectivity</h3>
-          <div className="flex flex-wrap gap-2">
-            {connectivity.map((conn) => (
-              <button
-                key={conn}
-                className="px-3 py-1 rounded-full border border-gray-300 hover:bg-black hover:text-white transition"
-              >
-                {conn}
-              </button>
-            ))}
-          </div>
-        </div>
-
-        {/* Camera */}
-        <div>
-          <h3 className="text-lg font-semibold text-gray-800 mb-2">Camera</h3>
-          <div className="flex flex-wrap gap-2">
-            {cameras.map((cam) => (
-              <button
-                key={cam}
-                className="px-3 py-1 rounded-full border border-gray-300 hover:bg-black hover:text-white transition"
-              >
-                {cam}
-              </button>
-            ))}
-          </div>
-        </div>
-
-        {/* Screen Size */}
-        <div>
-          <h3 className="text-lg font-semibold text-gray-800 mb-2">Screen Size</h3>
-          <div className="flex flex-wrap gap-2">
-            {screenSizes.map((size) => (
-              <button
-                key={size}
-                className="px-3 py-1 rounded-full border border-gray-300 hover:bg-black hover:text-white transition"
-              >
-                {size}
-              </button>
-            ))}
-          </div>
-        </div>
-
-        {/* Battery */}
-        <div>
-          <h3 className="text-lg font-semibold text-gray-800 mb-2">Battery</h3>
-          <div className="flex flex-wrap gap-2">
-            {batteries.map((bat) => (
-              <button
-                key={bat}
-                className="px-3 py-1 rounded-full border border-gray-300 hover:bg-black hover:text-white transition"
-              >
-                {bat}
-              </button>
-            ))}
-          </div>
-        </div>
-
-        {/* OS */}
-        <div>
-          <h3 className="text-lg font-semibold text-gray-800 mb-2">Operating System</h3>
-          <div className="flex flex-wrap gap-2">
-            {os.map((o) => (
-              <button
-                key={o}
-                className="px-3 py-1 rounded-full border border-gray-300 hover:bg-black hover:text-white transition"
-              >
-                {o}
-              </button>
-            ))}
-          </div>
-        </div>
-
-        {/* Storage Type */}
-        <div>
-          <h3 className="text-lg font-semibold text-gray-800 mb-2">Storage Type</h3>
-          <div className="flex flex-wrap gap-2">
-            {storageType.map((type) => (
-              <button
-                key={type}
-                className="px-3 py-1 rounded-full border border-gray-300 hover:bg-black hover:text-white transition"
-              >
-                {type}
-              </button>
-            ))}
+          {/* Price filter */}
+          <div className="mt-4 flex flex-col font-bold space-x-4">
+            <h1>Price Range</h1>
+            <div className="flex justify-center items-center space-x-4 mt-3">
+              <span className="text-sm font-medium text-gray-600">₹0</span>
+              <input
+                onChange={handlePriceRange}
+                type="range"
+                min="0"
+                max="200000"
+                value={priceRange[1]}
+                className="w-full h-2 bg-gray-300 rounded-lg appearance-none cursor-pointer accent-black"
+              />
+              <span className="text-sm font-medium text-gray-600">
+                ₹{priceRange[1]}
+              </span>
+            </div>
           </div>
         </div>
       </aside>

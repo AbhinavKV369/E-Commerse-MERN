@@ -6,6 +6,7 @@ import {
   HiOutlineUser,
 } from "react-icons/hi";
 import { FiBell } from "react-icons/fi";
+import { navLinks }  from "../Constants/navLinks";
 
 import Searchbar from "./Searchbar";
 import CartDrawer from "../Layout/CartDrawer";
@@ -15,14 +16,7 @@ const Navbar = () => {
   const [cartDrawerOpen, setCartDrawerOpen] = useState(false);
   const [navDrawerOpen, setNavDrawerOpen] = useState(false);
 
-  const navLinks = [
-    "smart phone",
-    "laptop",
-    "tablets",
-    "head phones",
-    "speakers",
-    "Smart TV"
-  ];
+  const navigationLinks = navLinks
 
   return (
     <>
@@ -40,10 +34,10 @@ const Navbar = () => {
 
           {/* Menu Links (Desktop only) */}
           <div className="hidden lg:flex space-x-5 font-medium text-md uppercase text-black">
-            {navLinks.map((item) => (
+            {navigationLinks.map((item) => (
               <Link
                 key={item}
-                to={`collections/${item}`}
+                to={`collections/All`}
                 className="relative group transition-all duration-300 font-normal">
                 {item}
                 <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-black transition-all duration-300 group-hover:w-full"></span>
@@ -109,7 +103,7 @@ const Navbar = () => {
       <NavDrawer
         navDrawerOpen={navDrawerOpen}
         setNavDrawerOpen={setNavDrawerOpen}
-        navLinks={navLinks}
+        navLinks={navigationLinks}
       />
     </>
   );
