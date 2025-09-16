@@ -22,7 +22,13 @@ import Notification from "./components/Profile/Notification";
 import Security from "./components/Profile/Security";
 import NotFound from "./pages/NotFound";
 
+// Admin Layots and Routes
+import AdminLayout from "./components/Layout/AdminLayout";
+import Dashboard from "./components/Admin/Dashboard";
+import UserOrders from "./components/Admin/UserOrders";
+
 const App = () => {
+  
   return (
     <div>
       <BrowserRouter>
@@ -31,12 +37,15 @@ const App = () => {
           {/* Routes with Layout */}
           <Route path="/" element={<UserLayot />}>
             <Route index element={<Home />} />
-            <Route path="/collections/:collection" element={<CollectionsPage />} />
+            <Route
+              path="/collections/:collection"
+              element={<CollectionsPage />}
+            />
             {/* Profile outlet  */}
             <Route path="/profile" element={<ProfilePage />}>
               {/* Profile outlet components */}
-              <Route index element={ <Navigate to="orders" replace/>}  />
-              <Route path="orders"  element={< Orders />} />
+              <Route index element={<Navigate to="orders" replace />} />
+              <Route path="orders" element={<Orders />} />
               <Route path="wishlist" element={<Wishlist />} />
               <Route path="addresses" element={<Addresses />} />
               <Route path="payments" element={<PaymentMethods />} />
@@ -45,8 +54,11 @@ const App = () => {
             </Route>
           </Route>
 
-          <Route path="/admin" >
-
+          {/* Admin Routes */}
+          <Route path="/admin" element={<AdminLayout />}>
+            <Route index element={<Navigate to="dashboard" replace />} />
+            <Route path="dashboard" element={<Dashboard />} />
+            <Route path ="orders" element={<UserOrders />} />
           </Route>
 
           {/* Auth routes */}
@@ -54,8 +66,7 @@ const App = () => {
           <Route path="/register" element={<Register />} />
 
           {/* 404 Page */}
-          <Route path="*" element={ <NotFound/> }/>
-
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </div>

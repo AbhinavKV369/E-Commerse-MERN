@@ -6,7 +6,7 @@ const NotFound = () => {
     <div className="flex flex-col items-center justify-center h-screen text-gray-900 text-center px-4">
       {/* Animated Flash */}
       <div className="relative">
-        <div className="w-32 h-32 bg-gray-800 rounded-full flex items-center justify-center animate-bounce shadow-lg">
+        <div className="w-32 h-32 bg-gray-800 rounded-full flex items-center justify-center animate-bounce shadow-xl">
           <span className="text-6xl">⚡</span>
         </div>
         <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-20 h-2 animate-bounce bg-black rounded-full blur-sm"></div>
@@ -14,7 +14,7 @@ const NotFound = () => {
 
       {/* 404 Title */}
       <h1 className="mt-10 text-7xl font-extrabold tracking-widest">404</h1>
-      <p className="mt-4 text-lg text-gray-900">
+      <p className="mt-4 text-xl text-gray-900">
         Oops! The page you’re looking for has vanished into the void.
       </p>
 
