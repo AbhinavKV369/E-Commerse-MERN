@@ -20,6 +20,7 @@ import Addresses from "./components/Profile/Addresses";
 import PaymentMethods from "./components/Profile/PaymentMethods";
 import Notification from "./components/Profile/Notification";
 import Security from "./components/Profile/Security";
+import NotFound from "./pages/NotFound";
 
 const App = () => {
   return (
@@ -44,8 +45,17 @@ const App = () => {
             </Route>
           </Route>
 
+          <Route path="/admin" >
+
+          </Route>
+
+          {/* Auth routes */}
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+
+          {/* 404 Page */}
+          <Route path="*" element={ <NotFound/> }/>
+
         </Routes>
       </BrowserRouter>
     </div>
