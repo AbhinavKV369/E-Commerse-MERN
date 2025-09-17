@@ -26,6 +26,9 @@ import NotFound from "./pages/NotFound";
 import AdminLayout from "./components/Layout/AdminLayout";
 import Dashboard from "./components/Admin/Dashboard";
 import UserOrders from "./components/Admin/UserOrders";
+import ProductManagement from "./components/Admin/ProductManagement.jsx";
+import Users from "./components/Admin/Users";
+
 
 const App = () => {
   
@@ -58,7 +61,9 @@ const App = () => {
           <Route path="/admin" element={<AdminLayout />}>
             <Route index element={<Navigate to="dashboard" replace />} />
             <Route path="dashboard" element={<Dashboard />} />
-            <Route path ="orders" element={<UserOrders />} />
+            <Route path="users" element={<Users />} />
+            <Route path="products" element={<ProductManagement />} />
+            <Route path="orders" element={<UserOrders />} />
           </Route>
 
           {/* Auth routes */}

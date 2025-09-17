@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { HiHome, HiUser, HiCube, HiShoppingCart, HiCog } from "react-icons/hi";
+import { HiHome, HiUser, HiCube, HiShoppingCart } from "react-icons/hi";
 
 const AdminDrawer = () => {
   const links = [
@@ -8,7 +8,6 @@ const AdminDrawer = () => {
     { to: "/admin/users", label: "Users", icon: HiUser },
     { to: "/admin/products", label: "Products", icon: HiCube },
     { to: "/admin/orders", label: "Orders", icon: HiShoppingCart },
-    { to: "/admin/settings", label: "Settings", icon: HiCog },
   ];
 
   return (
