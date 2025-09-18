@@ -106,14 +106,14 @@ const Users = () => {
                 </td>
                 <td className="p-4 text-center space-x-2">
                   <button
-                  onClick={()=>{
-                    setIsFormOpen(true)
-                    editUser(user)
-                  }}
-                   className="px-3 py-1 text-sm bg-gray-800 text-white rounded hover:bg-black transition">
+                    onClick={() => {
+                      setIsFormOpen(true);
+                      editUser(user);
+                    }}
+                    className="px-3 py-1 text-sm bg-gray-800 text-white rounded hover:bg-black transition">
                     Edit
                   </button>
-                  <FormModal isFormOpen={isFormOpen} setIsFormOpen={setIsFormOpen} formFields={formFields} formValues={formValues} onSubmit={handleSubmit}/>
+
                   {user.status === "Active" ? (
                     <button className="px-3 py-1 text-sm bg-gray-600 text-white rounded hover:bg-gray-700 transition">
                       Block
@@ -129,6 +129,13 @@ const Users = () => {
           </tbody>
         </table>
       </div>
+      <FormModal
+        isFormOpen={isFormOpen}
+        setIsFormOpen={setIsFormOpen}
+        formFields={formFields}
+        formValues={formValues}
+        onSubmit={handleSubmit}
+      />
     </div>
   );
 };
