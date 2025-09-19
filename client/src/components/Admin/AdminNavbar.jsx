@@ -1,6 +1,7 @@
 import React from "react";
 import { FiBell, FiMessageSquare } from "react-icons/fi";
 import { HiOutlineUserCircle } from "react-icons/hi";
+import { Link } from "react-router-dom";
 
 const AdminNavbar = () => {
   return (
@@ -19,18 +20,23 @@ const AdminNavbar = () => {
       <div className="flex items-center gap-6 text-gray-700">
         {/* Messages */}
         <div className="relative cursor-pointer">
-          <FiMessageSquare className="text-2xl hover:text-black" />
-          <span className="absolute -top-1 -right-2 bg-red-600 text-white text-xs font-bold px-1.5 rounded-full">
-            3
-          </span>
+          <Link to="/admin/chats">
+            <FiMessageSquare className="text-2xl hover:text-black" />
+            <span className="absolute -top-1 -right-2 bg-red-600 text-white text-xs font-bold px-1.5 rounded-full">
+              3
+            </span>
+          </Link>
         </div>
 
         {/* Notifications */}
         <div className="relative cursor-pointer">
-          <FiBell className="text-2xl hover:text-black" />
-          <span className="absolute -top-1 -right-2 bg-red-600 text-white text-xs font-bold px-1.5 rounded-full">
-            5
-          </span>
+          <Link to="/admin/notifications">
+            {" "}
+            <FiBell className="text-2xl hover:text-black" />
+            <span className="absolute -top-1 -right-2 bg-red-600 text-white text-xs font-bold px-1.5 rounded-full">
+              5
+            </span>
+          </Link>
         </div>
 
         {/* Profile */}

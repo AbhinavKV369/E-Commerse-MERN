@@ -28,6 +28,8 @@ import Dashboard from "./components/Admin/Dashboard";
 import UserOrders from "./components/Admin/UserOrders";
 import ProductManagement from "./components/Admin/ProductManagement.jsx";
 import Users from "./components/Admin/Users";
+import AdminNotifications from "./components/Admin/AdminNotification.jsx";
+import UserChats from "./components/Admin/UserChats.jsx";
 
 
 const App = () => {
@@ -64,6 +66,8 @@ const App = () => {
             <Route path="users" element={<Users />} />
             <Route path="products" element={<ProductManagement />} />
             <Route path="orders" element={<UserOrders />} />
+            <Route path="notifications" element={<AdminNotifications />} />
+            <Route path="chats" element={<UserChats/>}/>
           </Route>
 
           {/* Auth routes */}
