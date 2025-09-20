@@ -90,7 +90,7 @@ const ProfilePage = () => {
           </div>
 
           {/* Menu */}
-          <nav className="mt-10 flex flex-col space-y-3">
+          <nav className="mt-10 flex flex-col space-y-3 ">
             {tabs.map((tab) => (
               <NavLink
                 key={tab.id}
@@ -102,7 +102,10 @@ const ProfilePage = () => {
                       : "bg-gray-100 text-gray-700 hover:bg-gray-200"
                   }`
                 }>
-                {tab.icon} {tab.label}
+                <div className="flex items-center gap-2">
+                  {tab.icon}
+                  <span className="p-1">{tab.label}</span>
+                </div>
               </NavLink>
             ))}
           </nav>

@@ -1,42 +1,55 @@
 import React from "react";
 import { FiBell, FiMessageSquare } from "react-icons/fi";
 import { HiOutlineUserCircle } from "react-icons/hi";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const AdminNavbar = () => {
   return (
-    <header className="fixed top-0 z-50 h-20 w-full bg-white shadow flex items-center justify-between px-6 border-b border-gray-200">
+    <header className="fixed top-0 z-50 h-25 w-full bg-white shadow flex items-center justify-between px-6 border-b border-gray-200">
       {/* Left Logo/Title */}
-      <div className="flex items-center gap-3">
-        <span className="text-2xl bg-black rounded-md p-1.5 shadow-xl text-white">
-          ⚡
-        </span>
-        <h1 className="text-lg font-bold text-gray-800 hidden sm:block">
-          Admin Dashboard
-        </h1>
-      </div>
+      <Link to="/admin">
+        <div className="flex items-center gap-3">
+          <span className="text-2xl bg-black rounded-md p-1.5 shadow-xl text-white">
+            ⚡
+          </span>
+          <h1 className="text-lg font-bold text-gray-800 hidden sm:block">
+            Admin Dashboard
+          </h1>
+        </div>
+      </Link>
 
-      {/* Right Icons */}
+      {/* Right Section (Icons + Profile) */}
       <div className="flex items-center gap-6 text-gray-700">
         {/* Messages */}
         <div className="relative cursor-pointer">
-          <Link to="/admin/chats">
-            <FiMessageSquare className="text-2xl hover:text-black" />
+          <NavLink
+            to="/admin/chats"
+            className={({ isActive }) =>
+              `relative flex items-center justify-center rounded-full p-2 transition ${
+                isActive ? "bg-gray-800 text-white" : "hover:bg-gray-100"
+              }`
+            }>
+            <FiMessageSquare className="text-2xl" />
             <span className="absolute -top-1 -right-2 bg-red-600 text-white text-xs font-bold px-1.5 rounded-full">
               3
             </span>
-          </Link>
+          </NavLink>
         </div>
 
         {/* Notifications */}
         <div className="relative cursor-pointer">
-          <Link to="/admin/notifications">
-            {" "}
-            <FiBell className="text-2xl hover:text-black" />
+          <NavLink
+            to="/admin/notifications"
+            className={({ isActive }) =>
+              `relative flex items-center justify-center rounded-full p-2 transition ${
+                isActive ? "bg-gray-800 text-white" : "hover:bg-gray-100"
+              }`
+            }>
+            <FiBell className="text-2xl" />
             <span className="absolute -top-1 -right-2 bg-red-600 text-white text-xs font-bold px-1.5 rounded-full">
               5
             </span>
-          </Link>
+          </NavLink>
         </div>
 
         {/* Profile */}
