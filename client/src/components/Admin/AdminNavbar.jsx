@@ -5,7 +5,7 @@ import { Link, NavLink } from "react-router-dom";
 
 const AdminNavbar = () => {
   return (
-    <header className="fixed top-0 z-50 h-25 w-full bg-white shadow flex items-center justify-between px-6 border-b border-gray-200">
+    <header className="fixed top-0 z-50 h-20 w-full bg-white shadow flex items-center justify-between px-6 border-b border-gray-200">
       {/* Left Logo/Title */}
       <Link to="/admin">
         <div className="flex items-center gap-3">

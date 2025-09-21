@@ -5,14 +5,15 @@ import { Outlet } from "react-router-dom";
 
 const AdminLayout = () => {
   return (
-    <div className="h-screen w-full flex flex-col">
+    <div className="h-screen w-full ">
       {/* Top Navbar */}
       <AdminNavbar />
+
       <div className="flex flex-1">
         {/* Sidebar */}
         <AdminDrawer />
-        {/* Main Content */}
-        <main className="flex-1 p-4 bg-gray-50 overflow-y-auto ml-60">
+
+        <main className="flex-1 mt-20 h-[80vh] p-2 bg-gray-50 ml-60 ">
           <Outlet />
         </main>
       </div>

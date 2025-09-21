@@ -72,7 +72,7 @@ const AdminOrdersCards = () => {
   };
 
   return (
-    <div className="p-6 bg-gray-50 min-h-screen pt-20">
+    <div className="p-6 bg-gray-50 min-h-screen">
       {/* 👆 pt-20 instead of mt-20 */}
       <h1 className="text-3xl font-bold mb-6 text-gray-900">User Orders</h1>
 

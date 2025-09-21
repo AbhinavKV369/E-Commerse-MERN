@@ -4,7 +4,7 @@ import { HiShoppingCart, HiUser, HiCube, HiCurrencyDollar, HiPresentationChartLi
 
 const Dashboard = () => {
   return (
-    <div className="p-6 space-y-6 mt-20">
+    <div className="p-6 space-y-6">
       {/* Top Reports */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         <div className="bg-white p-6 rounded-xl shadow hover:shadow-md transition">
