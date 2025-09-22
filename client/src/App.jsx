@@ -30,6 +30,7 @@ import ProductManagement from "./components/Admin/ProductManagement.jsx";
 import Users from "./components/Admin/Users";
 import AdminNotifications from "./components/Admin/AdminNotification.jsx";
 import UserChats from "./components/Admin/UserChats.jsx";
+import CheckoutPage from "./pages/CheckoutPage.jsx";
 
 
 const App = () => {
@@ -46,6 +47,7 @@ const App = () => {
               path="/collections/:collection"
               element={<CollectionsPage />}
             />
+            <Route path="/checkout" element={<CheckoutPage/>}/>
             {/* Profile outlet  */}
             <Route path="/profile" element={<ProfilePage />}>
               {/* Profile outlet components */}
