@@ -1,5 +1,6 @@
 import { HiXCircle } from "react-icons/hi";
 import CartContents from "../Cart/CartContents";
+import { Link } from "react-router-dom";
 
 const CartDrawer = ({ cartDrawerOpen, setCartDrawerOpen }) => {
   return (
@@ -47,9 +48,11 @@ const CartDrawer = ({ cartDrawerOpen, setCartDrawerOpen }) => {
           </div>
 
           {/* Checkout Button */}
-          <button className="w-full bg-black hover:bg-gray-900 text-white py-3 rounded-xl font-semibold shadow-md transition">
-            Checkout
-          </button>
+          <Link to="/checkout">
+            <button className="w-full bg-black hover:bg-gray-900 text-white py-3 rounded-xl font-semibold shadow-md transition">
+              Checkout
+            </button>
+          </Link>
         </div>
       </div>
     </>

@@ -32,7 +32,7 @@ const AdminNotificationPage = () => {
   ];
 
   return (
-    <div className="mt-20 p-6 bg-gray-50 min-h-screen text-gray-800">
+    <div className=" p-6 bg-gray-50 min-h-screen text-gray-800">
       {/* Header */}
       <div className="flex items-center justify-between mb-6">
         <h1 className="text-2xl font-semibold flex items-center gap-2">

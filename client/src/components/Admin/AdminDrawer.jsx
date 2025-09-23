@@ -22,7 +22,7 @@ const AdminDrawer = () => {
                 isActive ? "bg-gray-800 text-white font-semibold" : ""
               }`
             }>
-           <link.icon className="text-xl"/>
+            <link.icon className="text-xl" />
             <span>{link.label}</span>
           </NavLink>
         ))}

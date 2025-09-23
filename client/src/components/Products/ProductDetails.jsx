@@ -167,7 +167,7 @@ const ProductDetails = () => {
         </div>
       </div>
       {/* Specifications */}
-      <div className="bg-gray-50 p-5 rounded-xl shadow mt-3">
+      <div className="bg-gray-50 p-5 mb-5 rounded-xl shadow mt-3">
         <h3 className="font-semibold text-gray-900 mb-3">Specifications</h3>
         <ul className="space-y-2 text-gray-700">
           {Object.entries(product.specs).map(([key, value], idx) => (

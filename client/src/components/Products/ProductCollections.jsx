@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import LaptopCollection from "../../assets/Laptop.webp";
 import SmartPhoneCollection from "../../assets/Smartphone.webp";
-import GadgetCollection from "../../assets/Gadgets.webp";
+import TabletCollection from "../../assets/Gadgets.webp";
 
 const ProductCollections = () => {
   return (
@@ -60,19 +60,19 @@ const ProductCollections = () => {
           <div className="relative w-full h-64 md:h-72 lg:h-80 rounded-xl shadow-lg transition-transform duration-500 transform group-hover:rotate-y-6 group-hover:-rotate-x-3">
             <Link to={`/`}>
               <img
-                src={GadgetCollection}
+                src={TabletCollection}
                 alt="Gadgets"
                 className="w-full h-full object-cover rounded-xl"
               />
               <div className="absolute inset-0 bg-black/40 flex items-center justify-center rounded-xl opacity-0 group-hover:opacity-100 transition duration-300">
                 <p className="text-white text-lg font-semibold">
-                  Explore Gadgets
+                  Explore Tablets
                 </p>
               </div>
             </Link>
           </div>
           <h2 className="mt-3 text-xl font-bold text-center">
-            Gadget Collections
+            Tablet Collections
           </h2>
         </div>
       </div>

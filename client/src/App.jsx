@@ -1,56 +1,57 @@
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { Toaster } from "sonner";
-// Main Outlet
-import UserLayot from "./components/Layout/UserLayout";
-// Home page
+
+// Layouts
+import UserLayout from "./components/Layout/UserLayout";
+import AdminLayout from "./components/Layout/AdminLayout";
+
+// Home and general pages
 import Home from "./pages/Home";
-// Profile Page
-import ProfilePage from "./pages/ProfilePage";
-// Collection Pages
 import CollectionsPage from "./pages/CollectionsPage";
+import ProductDetails from "./components/Products/ProductDetails";
+import CheckoutPage from "./pages/CheckoutPage";
+import NotFound from "./pages/NotFound";
 
-// Auth pages
-import Login from "./pages/Login";
-import Register from "./pages/Register";
-
-// Profile Outlet components
+// Profile pages
+import ProfilePage from "./pages/ProfilePage";
 import Orders from "./components/Profile/Orders";
 import Wishlist from "./components/Profile/Wishlist";
 import Addresses from "./components/Profile/Addresses";
 import PaymentMethods from "./components/Profile/PaymentMethods";
 import Notification from "./components/Profile/Notification";
 import Security from "./components/Profile/Security";
-import NotFound from "./pages/NotFound";
 
-// Admin Layots and Routes
-import AdminLayout from "./components/Layout/AdminLayout";
+// Auth pages
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+
+// Admin pages
 import Dashboard from "./components/Admin/Dashboard";
 import UserOrders from "./components/Admin/UserOrders";
 import ProductManagement from "./components/Admin/ProductManagement.jsx";
 import Users from "./components/Admin/Users";
-import AdminNotifications from "./components/Admin/AdminNotification.jsx";
-import UserChats from "./components/Admin/UserChats.jsx";
-import CheckoutPage from "./pages/CheckoutPage.jsx";
-
+import AdminNotifications from "./components/Admin/AdminNotification";
+import UserChats from "./components/Admin/UserChats";
 
 const App = () => {
-  
   return (
     <div>
       <BrowserRouter>
+        {/* Toaster for Notifications */}
         <Toaster position="top-right" />
         <Routes>
-          {/* Routes with Layout */}
-          <Route path="/" element={<UserLayot />}>
+          {/* User Routes */}
+          <Route path="/" element={<UserLayout />}>
             <Route index element={<Home />} />
             <Route
-              path="/collections/:collection"
+              path="collections/:collection"
               element={<CollectionsPage />}
             />
-            <Route path="/checkout" element={<CheckoutPage/>}/>
-            {/* Profile outlet  */}
-            <Route path="/profile" element={<ProfilePage />}>
-              {/* Profile outlet components */}
+            <Route path="product/:id" element={<ProductDetails />} />
+            <Route path="checkout" element={<CheckoutPage />} />
+
+            {/* Profile Routes */}
+            <Route path="profile" element={<ProfilePage />}>
               <Route index element={<Navigate to="orders" replace />} />
               <Route path="orders" element={<Orders />} />
               <Route path="wishlist" element={<Wishlist />} />
@@ -69,7 +70,7 @@ const App = () => {
             <Route path="products" element={<ProductManagement />} />
             <Route path="orders" element={<UserOrders />} />
             <Route path="notifications" element={<AdminNotifications />} />
-            <Route path="chats" element={<UserChats/>}/>
+            <Route path="chats" element={<UserChats />} />
           </Route>
 
           {/* Auth routes */}
