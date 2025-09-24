@@ -101,6 +101,7 @@ const CollectionPage = () => {
                 <option>Low to High</option>
                 <option>High to Low</option>
                 <option>Popularity</option>
+                <option>Most Liked</option>
               </select>
             </div>
           </div>

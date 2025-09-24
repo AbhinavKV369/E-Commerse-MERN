@@ -1,6 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
+import { useSearchParams } from "react-router-dom"
 
 const FilterSidebar = () => {
+  const [searchParams,setSearchParams] = useSearchParams();
+  const [filters, setFilters] = useState({
+    category: "",
+    brands: [],
+    ratings:[],
+    minPrice:0,
+    maxPrice:200000,
+  });
+  const [priceRange,setPriceRange] = useState([])
   const categories = [
     "Smartphones",
     "Laptops",
