@@ -23,8 +23,8 @@ const Product = () => {
   ];
 
   return (
-    <div className="p-6 bg-gray-100 min-h-screen">
-      <h1 className="text-2xl font-bold mb-6 text-gray-900">Products</h1>
+    <div className="p-6 min-h-screen">
+      <h1 className="text-3xl font-bold mb-6 text-gray-900">Products</h1>
 
       {/* Search & Add Button */}
       <div className="flex items-center justify-between mb-6">

@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { FiFilter } from "react-icons/fi";
 import FilterSidebar from "../components/Products/FilterSidebar";
+import SortProducts from "../components/Products/sortProducts";
+import { Link } from "react-router-dom";
 
 const CollectionPage = () => {
   const [products, setProducts] = useState([]);
@@ -95,15 +97,7 @@ const CollectionPage = () => {
             </div>
 
             {/* Sort dropdown */}
-            <div className="bg-white p-2 font-bold text-gray-700 rounded-lg">
-              <select className="px-3 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-black">
-                <option>Default</option>
-                <option>Low to High</option>
-                <option>High to Low</option>
-                <option>Popularity</option>
-                <option>Most Liked</option>
-              </select>
-            </div>
+            <SortProducts />
           </div>
 
           {/* Products */}
@@ -112,18 +106,21 @@ const CollectionPage = () => {
               <div
                 key={product.id}
                 className="bg-white shadow-md rounded-xl p-4 hover:shadow-lg transition relative">
-                <img
-                  src={product.image}
-                  alt={product.name}
-                  className="w-full h-40 object-contain mb-4"
-                  loading="lazy"
-                />
-                <h2 className="text-sm font-medium text-gray-800">
-                  {product.name}
-                </h2>
-                <p className="text-lg font-bold text-black mt-2">
-                  {product.price}
-                </p>
+                <Link to={`/product/${product.id}`}>
+                  <img
+                    src={product.image}
+                    alt={product.name}
+                    className="w-full h-40 object-contain mb-4"
+                    loading="lazy"
+                  />
+                  <h2 className="text-sm font-medium text-gray-800">
+                    {product.name}
+                  </h2>
+                  <p className="text-lg font-bold text-black mt-2">
+                    {product.price}
+                  </p>
+                </Link>
+
                 <button
                   aria-label={`Add ${product.name} to cart`}
                   className="mt-3 w-full bg-black text-white py-2 rounded-lg text-sm font-medium hover:bg-gray-800 transition">

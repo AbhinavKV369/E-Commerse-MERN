@@ -88,8 +88,8 @@ const NewArrivals = () => {
 
   return (
     <section>
-      <div className="container mx-auto mb-10 relative">
-        <h1 className="text-3xl font-bold mx-5">New arrivals</h1>
+      <div className="container mx-auto my-5 relative">
+        <h1 className="text-3xl font-bold mx-5 my-5">New Arrivals</h1>
 
         {/* Arrows */}
         <div className="absolute right-0 flex px-4 space-x-2">
@@ -118,7 +118,7 @@ const NewArrivals = () => {
         {/* Scrollable container with mouse wheel */}
         <div
           ref={scrollRef}
-          className="mt-10 pb-3 flex space-x-3 overflow-x-auto scrollbar-hide scroll-smooth">
+          className=" pb-3 flex space-x-3 overflow-x-auto scrollbar-hide scroll-smooth">
           {newArrivalsData.map((product) => (
             <Link
               key={product.id}
