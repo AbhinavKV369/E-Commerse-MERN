@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { FiFilter } from "react-icons/fi";
 import FilterSidebar from "../components/Products/FilterSidebar";
-import SortProducts from "../components/Products/sortProducts";
+import SortProducts from "../components/Products/SortProducts";
 import { Link } from "react-router-dom";
 
 const CollectionPage = () => {
