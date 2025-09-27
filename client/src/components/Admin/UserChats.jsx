@@ -1,60 +1,44 @@
-import React, { useState, useRef, useEffect } from "react";
+import React from "react";
 
-const AdminChats = () => {
+const AdminChatsModernUI = () => {
   const users = [
-    { id: 1, name: "John Doe" },
-    { id: 2, name: "Jane Smith" },
-    { id: 3, name: "Alex Johnson" },
-    { id: 4, name: "Emily Clark" },
-    { id: 5, name: "Michael Brown" },
+    { name: "John Doe", avatar: "https://i.pravatar.cc/40?img=1" },
+    { name: "Jane Smith", avatar: "https://i.pravatar.cc/40?img=2" },
+    { name: "Alex Johnson", avatar: "https://i.pravatar.cc/40?img=3" },
+    { name: "Emily Clark", avatar: "https://i.pravatar.cc/40?img=4" },
+    { name: "Michael Brown", avatar: "https://i.pravatar.cc/40?img=5" },
   ];
 
-  const initialMessages = {
-    1: [
-      { sender: "user", text: "Hi, I need help with my order." },
-      { sender: "admin", text: "Sure! Can you provide your order ID?" },
-    ],
-    2: [{ sender: "user", text: "Hello! My product arrived damaged." }],
-    3: [{ sender: "user", text: "Can I change my delivery address?" }],
-    4: [{ sender: "user", text: "I want to cancel my subscription." }],
-    5: [{ sender: "user", text: "Do you ship internationally?" }],
-  };
-
-  const [selectedUser, setSelectedUser] = useState("");
-  const [messages, setMessages] = useState(initialMessages);
-  const [newMessage, setNewMessage] = useState("");
-  const chatEndRef = useRef(null);
-
-  const handleSend = () => {
-    if (!newMessage.trim()) return;
-    setMessages({
-      ...messages,
-      [selectedUser]: [
-        ...(messages[selectedUser] || []),
-        { sender: "admin", text: newMessage },
-      ],
-    });
-    setNewMessage("");
-  };
-
-  useEffect(() => {
-    chatEndRef.current?.scrollIntoView({ behavior: "smooth" });
-  }, [messages, selectedUser]);
+  const messages = [
+    {
+      sender: "user",
+      text: "Hi, I need help with my order.",
+      time: "10:01 AM",
+    },
+    {
+      sender: "admin",
+      text: "Sure! Can you provide your order ID?",
+      time: "10:02 AM",
+    },
+    { sender: "user", text: "Here is my order ID: 12345", time: "10:03 AM" },
+  ];
 
   return (
-    <div className="fixed left-0 right-0 bottom-0 top-20 flex bg-gray-100">
+    <div className="fixed left-0 right-0 bottom-0 top-20 flex bg-gray-100 shadow-lg">
       {/* Users List */}
-      <div className="w-1/4 bg-white border-r">
-        <h2 className="p-4 font-bold border-b">Users</h2>
-        <ul className="overflow-y-auto h-full">
-          {users.map((user) => (
+      <div className="w-1/4 bg-white border-r flex flex-col">
+        <h2 className="p-4 font-bold border-b text-gray-700">Users</h2>
+        <ul className="overflow-y-auto flex-1">
+          {users.map((user, index) => (
             <li
-              key={user.id}
-              onClick={() => setSelectedUser(user.id)}
-              className={`p-3 cursor-pointer hover:bg-gray-200 ${
-                selectedUser === user.id ? "bg-blue-100 font-semibold" : ""
-              }`}>
-              {user.name}
+              key={index}
+              className="flex items-center gap-3 p-3 cursor-pointer hover:bg-gray-100 transition rounded">
+              <img
+                src={user.avatar}
+                alt={user.name}
+                className="w-10 h-10 rounded-full"
+              />
+              <span className="text-gray-700 font-medium">{user.name}</span>
             </li>
           ))}
         </ul>
@@ -62,34 +46,40 @@ const AdminChats = () => {
 
       {/* Chat Window */}
       <div className="flex-1 flex flex-col">
-        <div className="flex-1 p-4 overflow-y-auto">
-          {messages[selectedUser]?.map((msg, i) => (
+        <div className="flex-1 p-4 overflow-y-auto flex flex-col gap-2">
+          {messages.map((msg, index) => (
             <div
-              key={i}
-              className={`p-2 my-1 rounded-lg max-w-xs break-words ${
-                msg.sender === "admin"
-                  ? "bg-blue-500 text-white ml-auto text-right"
-                  : "bg-gray-300 text-gray-800 mr-auto"
+              key={index}
+              className={`flex items-end ${
+                msg.sender === "admin" ? "justify-end" : "justify-start"
               }`}>
-              {msg.text}
+              <div
+                className={`flex flex-col ${
+                  msg.sender === "admin" ? "items-end" : "items-start"
+                }`}>
+                <div
+                  className={`p-3 rounded-lg max-w-xs break-words ${
+                    msg.sender === "admin"
+                      ? "bg-gray-600 text-white rounded-br-none"
+                      : "bg-gray-200 text-gray-800 rounded-bl-none"
+                  }`}>
+                  {msg.text}
+                </div>
+                <span className="text-xs text-gray-400 mt-1">{msg.time}</span>
+              </div>
             </div>
           ))}
-          <div ref={chatEndRef}></div>
+          <div></div>
         </div>
 
         {/* Input */}
-        <div className="p-4 border-t flex gap-2">
+        <div className="p-4 border-t flex gap-3 items-center bg-white">
           <input
             type="text"
-            className="flex-1 p-2 border rounded"
             placeholder="Type a message..."
-            value={newMessage}
-            onChange={(e) => setNewMessage(e.target.value)}
-            onKeyDown={(e) => e.key === "Enter" && handleSend()}
+            className="flex-1 p-3 border rounded-full focus:outline-none focus:ring-2 focus:ring-blue-400"
           />
-          <button
-            onClick={handleSend}
-            className="px-4 bg-blue-500 text-white rounded hover:bg-blue-600">
+          <button className="px-4 py-2 bg-gray-600 text-white rounded-full hover:bg-gray-500 transition">
             Send
           </button>
         </div>
@@ -98,4 +88,4 @@ const AdminChats = () => {
   );
 };
 
-export default AdminChats;
+export default AdminChatsModernUI;

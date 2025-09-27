@@ -34,8 +34,8 @@ const AdminNotificationPage = () => {
   return (
     <div className=" p-6 bg-gray-50 min-h-screen text-gray-800">
       {/* Header */}
-      <div className="flex items-center justify-between mb-6">
-        <h1 className="text-2xl font-semibold flex items-center gap-2 text-3xl ">
+      <div className="flex items-bet justify-between space-x-2 mb-6">
+        <h1 className="font-semibold flex items-center gap-2 text-3xl ">
           <FiBell className="text-gray-600 text-3xl " /> Notifications
         </h1>
         <button className="px-4 py-2 bg-gray-900 text-white rounded-lg shadow-sm hover:bg-gray-800 transition">

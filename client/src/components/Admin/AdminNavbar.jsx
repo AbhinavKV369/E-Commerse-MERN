@@ -29,8 +29,8 @@ const AdminNavbar = () => {
                 isActive ? "bg-gray-800 text-white" : "hover:bg-gray-100"
               }`
             }>
-            <FiMessageSquare className="text-2xl" />
-            <span className="absolute -top-1 -right-2 bg-red-600 text-white text-xs font-bold px-1.5 rounded-full">
+            <FiMessageSquare className="text-2xl hidden lg:block" />
+            <span className="absolute hidden lg:block -top-1 -right-2 bg-red-600 text-white text-xs font-bold px-1.5 rounded-full">
               3
             </span>
           </NavLink>

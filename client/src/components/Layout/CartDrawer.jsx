@@ -49,7 +49,11 @@ const CartDrawer = ({ cartDrawerOpen, setCartDrawerOpen }) => {
 
           {/* Checkout Button */}
           <Link to="/checkout">
-            <button className="w-full bg-black hover:bg-gray-900 text-white py-3 rounded-xl font-semibold shadow-md transition">
+            <button
+              onClick={() => {
+                setCartDrawerOpen(false);
+              }}
+              className="w-full bg-black hover:bg-gray-900 text-white py-3 rounded-xl font-semibold shadow-md transition">
               Checkout
             </button>
           </Link>

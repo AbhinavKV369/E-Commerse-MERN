@@ -11,25 +11,43 @@ const Home = () => {
       id: 1,
       name: "Samsung Galaxy S24 Ultra",
       price: "₹1,29,999",
-      image: "/assets/Gadgets.png",
+      image:
+        "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=800&auto=format&fit=crop&q=80",
     },
     {
       id: 2,
       name: "Apple MacBook Air M2",
-      price: "₹99,999",
-      image: "/assets/Laptop.png",
+      price: "₹1,09,900",
+      image:
+        "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=800&auto=format&fit=crop&q=80",
     },
     {
       id: 3,
       name: "Sony WH-1000XM5 Headphones",
-      price: "₹29,999",
-      image: "/assets/Headphones.png",
+      price: "₹29,990",
+      image:
+        "https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?w=800&auto=format&fit=crop&q=80",
     },
     {
       id: 4,
+      name: "iPad Pro 12.9 (M2)",
+      price: "₹1,12,900",
+      image:
+        "https://images.unsplash.com/photo-1585790050230-5dd28404ccb9?w=800&auto=format&fit=crop&q=80",
+    },
+    {
+      id: 5,
+      name: "Dell XPS 15 Laptop",
+      price: "₹1,49,990",
+      image:
+        "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=800&auto=format&fit=crop&q=80",
+    },
+    {
+      id: 6,
       name: "Apple Watch Series 9",
-      price: "₹45,999",
-      image: "/assets/Watch.png",
+      price: "₹41,900",
+      image:
+        "https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?w=800&auto=format&fit=crop&q=80",
     },
   ];
   return (

@@ -30,7 +30,6 @@ const ProfilePage = () => {
 
   const tabs = [
     { id: "orders", label: "My Orders", icon: <FiPackage /> },
-    { id: "wishlist", label: "Wishlist", icon: <FiHeart /> },
     { id: "addresses", label: "Addresses", icon: <FiMapPin /> },
     { id: "payments", label: "Payment Methods", icon: <FiCreditCard /> },
     { id: "notifications", label: "Notifications", icon: <FiBell /> },

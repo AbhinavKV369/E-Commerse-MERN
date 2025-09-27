@@ -50,6 +50,24 @@ const CheckoutPage = () => {
     },
   ];
 
+  // Example order items
+  const orderItems = [
+    {
+      id: 1,
+      name: "Samsung Galaxy S24 Ultra",
+      price: 129999,
+      image:
+        "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=800&auto=format&fit=crop&q=80",
+    },
+    {
+      id: 2,
+      name: "Apple MacBook Air M2",
+      price: 109900,
+      image:
+        "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=800&auto=format&fit=crop&q=80",
+    },
+  ];
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -271,35 +289,33 @@ const CheckoutPage = () => {
           <h2 className="text-2xl font-bold mb-6 text-gray-900 border-b pb-3">
             Order Summary
           </h2>
+
           <div className="space-y-6 text-gray-700">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-4">
-                <img
-                  src="https://via.placeholder.com/60"
-                  alt="Product 1"
-                  className="rounded-lg"
-                />
-                <span>Product 1</span>
+            {orderItems.map((item) => (
+              <div
+                key={item.id}
+                className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-4">
+                <div className="flex items-center gap-2 sm:gap-4">
+                  <img
+                    src={item.image}
+                    alt={item.name}
+                    className="w-16 h-16 sm:w-20 sm:h-20 rounded-lg object-cover"
+                  />
+                  <span className="text-sm sm:text-base">{item.name}</span>
+                </div>
+                <span className="font-medium text-sm sm:text-base">
+                  ₹{item.price}
+                </span>
               </div>
-              <span className="font-medium">₹500</span>
-            </div>
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-4">
-                <img
-                  src="https://via.placeholder.com/60"
-                  alt="Product 2"
-                  className="rounded-lg"
-                />
-                <span>Product 2</span>
-              </div>
-              <span className="font-medium">₹700</span>
-            </div>
+            ))}
 
             <hr />
 
-            <div className="flex justify-between font-bold text-xl text-gray-700">
+            <div className="flex flex-col sm:flex-row justify-between font-bold text-lg sm:text-xl text-gray-700 gap-2 sm:gap-0">
               <span>Total</span>
-              <span>₹1200</span>
+              <span>
+                ₹{orderItems.reduce((total, item) => total + item.price, 0)}
+              </span>
             </div>
           </div>
 

@@ -14,41 +14,47 @@ const CollectionPage = () => {
           id: 1,
           name: "Samsung Galaxy S24 Ultra",
           price: "₹1,29,999",
-          image: "/assets/Smartphone.webp",
+          image:
+            "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=800&auto=format&fit=crop&q=80", // smartphone
         },
         {
           id: 2,
           name: "Apple MacBook Air M2",
-          price: "₹1,05,999",
-          image: "/assets/Laptop.png",
+          price: "₹1,09,900",
+          image:
+            "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=800&auto=format&fit=crop&q=80", // laptop
         },
         {
           id: 3,
-          name: "Sony WH-1000XM5",
-          price: "₹29,999",
-          image: "/assets/Headphone.png",
+          name: "Sony WH-1000XM5 Headphones",
+          price: "₹29,990",
+          image:
+            "https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?w=800&auto=format&fit=crop&q=80", // headphones
         },
         {
           id: 4,
-          name: "Dell XPS 13",
-          price: "₹95,000",
-          image: "/assets/Laptop.png",
+          name: "iPad Pro 12.9 (M2)",
+          price: "₹1,12,900",
+          image:
+            "https://images.unsplash.com/photo-1585790050230-5dd28404ccb9?w=800&auto=format&fit=crop&q=80", // tablet
         },
         {
           id: 5,
-          name: "Realme Buds Air 5",
-          price: "₹3,499",
-          image: "/assets/Earbuds.png",
+          name: "Dell XPS 15 Laptop",
+          price: "₹1,49,990",
+          image:
+            "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=800&auto=format&fit=crop&q=80", // laptop
         },
         {
           id: 6,
-          name: "Redmi Note 13 Pro",
-          price: "₹24,999",
-          image: "/assets/Smartphone.webp",
+          name: "Apple Watch Series 9",
+          price: "₹41,900",
+          image:
+            "https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?w=800&auto=format&fit=crop&q=80", // smartwatch
         },
       ];
       setProducts(fetchedProducts);
-    }, 1000);
+    }, 500);
   }, []);
   return (
     <div className="bg-gray-50 min-h-screen py-2 px-4">

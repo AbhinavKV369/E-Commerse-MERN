@@ -5,6 +5,9 @@ import { Toaster } from "sonner";
 import UserLayout from "./components/Layout/UserLayout";
 import AdminLayout from "./components/Layout/AdminLayout";
 
+import ScrollToTop from "./components/Common/ScrollToTop.jsx";
+
+
 // Home and general pages
 import Home from "./pages/Home";
 import CollectionsPage from "./pages/CollectionsPage";
@@ -15,7 +18,6 @@ import NotFound from "./pages/NotFound";
 // Profile pages
 import ProfilePage from "./pages/ProfilePage";
 import Orders from "./components/Profile/Orders";
-import Wishlist from "./components/Profile/Wishlist";
 import Addresses from "./components/Profile/Addresses";
 import PaymentMethods from "./components/Profile/PaymentMethods";
 import Notification from "./components/Profile/Notification";
@@ -39,6 +41,8 @@ const App = () => {
       <BrowserRouter>
         {/* Toaster for Notifications */}
         <Toaster position="top-right" />
+
+        <ScrollToTop />
         <Routes>
           {/* User Routes */}
           <Route path="/" element={<UserLayout />}>
@@ -54,7 +58,6 @@ const App = () => {
             <Route path="profile" element={<ProfilePage />}>
               <Route index element={<Navigate to="orders" replace />} />
               <Route path="orders" element={<Orders />} />
-              <Route path="wishlist" element={<Wishlist />} />
               <Route path="addresses" element={<Addresses />} />
               <Route path="payments" element={<PaymentMethods />} />
               <Route path="notifications" element={<Notification />} />

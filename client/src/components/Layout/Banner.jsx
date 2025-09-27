@@ -1,5 +1,6 @@
 import React from "react";
 import BannerImage from "../../assets/Banner.webp";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
@@ -24,9 +25,12 @@ const Hero = () => {
           Quality gadgets at lightning speed!
         </p>
         <div className="flex flex-col sm:flex-row gap-4">
-          <button className="px-6 py-3 bg-black text-white font-semibold rounded-lg hover:bg-gray-800 transition">
-            Shop Now
-          </button>
+          <Link to="/collections/all">
+            <button className="px-6 py-3 bg-black text-white font-semibold rounded-lg hover:bg-gray-800 transition">
+              Shop Now
+            </button>
+          </Link>
+
           <button className="px-6 py-3 bg-gray-700 text-white font-semibold rounded-lg hover:bg-gray-600 transition">
             Learn More
           </button>

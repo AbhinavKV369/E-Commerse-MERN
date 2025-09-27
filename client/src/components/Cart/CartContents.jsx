@@ -9,7 +9,7 @@ const CartContents = () => {
       price: 79999,
       qty: 1,
       image:
-        "",
+        "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8c21hcnRwaG9uZXxlbnwwfHwwfHx8MA%3D%3D",
       colors: ["#000000", "#1E40AF", "#DC2626"],
     },
     {
@@ -18,7 +18,7 @@ const CartContents = () => {
       price: 74999,
       qty: 1,
       image:
-        "",
+        "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8c21hcnRwaG9uZXxlbnwwfHwwfHx8MA%3D%3D",
       colors: ["#10B981", "#A78BFA", "#FBBF24"],
     },
     {
@@ -26,7 +26,8 @@ const CartContents = () => {
       name: "Sony WH-1000XM5 Headphones",
       price: 29999,
       qty: 1,
-      image: "",
+      image:
+        "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8c21hcnRwaG9uZXxlbnwwfHwwfHx8MA%3D%3D",
       colors: ["#000000", "#E5E7EB"],
     },
     {
@@ -35,7 +36,7 @@ const CartContents = () => {
       price: 114999,
       qty: 1,
       image:
-        "https://store.storeimages.c",
+        "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8c21hcnRwaG9uZXxlbnwwfHwwfHx8MA%3D%3D",
       colors: ["#374151", "#F9FAFB", "#FDE68A"],
     },
     {
@@ -44,13 +45,13 @@ const CartContents = () => {
       price: 12999,
       qty: 1,
       image:
-        "",
+        "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8c21hcnRwaG9uZXxlbnwwfHwwfHx8MA%3D%3D",
       colors: ["#FFFFFF", "#000000", "#F97316"],
     },
   ];
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-6 p-4">
+    <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-1 gap-6 p-4">
       {products.map((item) => (
         <div
           key={item.id}
